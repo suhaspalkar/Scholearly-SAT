@@ -123,7 +123,7 @@
 		<string>IDEActiveWorkspaceTabController</string>
 		<string>IDEWindowToolbarIsVisible</string>
 		<string>IDEWindowTabBarIsVisible</string>
-		<string>{{741, 63}, {1073, 989}}</string>
+		<string>{{591, -238}, {1073, 989}}</string>
 		<dict>
 			<key>$class</key>
 			<dict>
@@ -1004,7 +1004,7 @@
 		<string>PrimaryDocumentVisibleCharacterRange</string>
 		<string>HideAllIssues</string>
 		<string>PrimaryDocumentSelectedCharacterRange</string>
-		<real>354448317.78157502</real>
+		<real>354448567.00483203</real>
 		<string>{0, 1316}</string>
 		<string>{0, 0}</string>
 		<dict>
@@ -6660,7 +6660,7 @@
 				</dict>
 			</array>
 		</dict>
-		<real>354448317.77944201</real>
+		<real>354448567.00206101</real>
 		<string>{0, 1316}</string>
 		<dict>
 			<key>$class</key>
