@@ -172,34 +172,6 @@
 	 border-radius:1.5em;
 }
 
-/*	.fc_web_dialog
-	{
-		 display: none;
-		 position: fixed;
-		 width: 200px;
-		 height: 230px;
-		 top: 40%;
-		 left: 50%;
-		 margin-left: -100px;
-		 margin-top: -100px;
-		 background-color: #ffffff;
-		 border: 2px solid #336699;
-		 padding: 0px;
-		 z-index: 102;
-		 font-family: Verdana;
-		 font-size: 10pt;
-	}
-
-	#btnYes,#btnNo
-	{
-		font-size:0.7em;
-		width:5em;
-
-	}*/
-/*	#txtgroupName{height:1em; width:9em;}
-	#txtquestion{height:1em; width:9em;}
-	#txtcue{height:1em; width:9em;}
-	#txtanswer{height:1em; width:9em;}*/
 
 #crosscheck
 {
