@@ -1,0 +1,111 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header {
+	float: left;
+	//height:auto;
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 1.5em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bolder;
+	color:#0d688e;
+}
+
+.varyNavigaterSize {
+    width:25px;
+	height:15px;
+	border:none;
+}
+
+.fc_text {
+	width: 340px;
+}
+
+#answer
+{  
+   	word-wrap:break-word;
+	text-align:center;
+	width: 340px;
+	font-size:2em;
+	height:300px;
+	//color:#090; 
+	
+	
+}
+
+.image .fc_text {
+	position:absolute;
+	top:5px; 
+	left:6px;
+	width: 340px;
+	height: 350px;
+	text-align:center;
+}
+
+/*.image .aq {
+	position:absolute;
+	top:2px; 
+    text-align:left;
+	width:200px;
+	height: 50px;
+	
+}
+*/
+.questImgSize {
+	 width:40px;
+	 height:40px;
+	 border:none;
+}
+
+.block {
+    
+	height: 500px;
+	width: 360px;
+
+}
+
+.fSize {
+	height: 500px;
+	width: 360px;
+}
+
+.bSize {
+	height: 500px;
+	width: 360px;
+}
+
+.contentID {
+	height:100%;
+	width:100%;
+}
+/*
+.pt {
+	height:100%;
+	width:100%;
+}*/
+#queNumberP
+{
+	margin-top:.6em;
+	font-size:3em; 
+	//color:#990099;
+	
+}
+#question
+{	
+	margin-top:2.6em;
+	font-size:2em;
+}
+#cue
+{   
+    margin-top:1.3em;
+	font-size:2em;
+	//color:#FF0000;
+}
+#ansTextFC
+{   
+    margin-top:.6em;
+	font-size:3em;
+ 
+}

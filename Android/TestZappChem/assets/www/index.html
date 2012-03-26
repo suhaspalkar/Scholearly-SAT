@@ -1,0 +1,2754 @@
+<!DOCTYPE HTML>
+<html> <!--manifest="testZapp.manifest"> -->
+<head>
+ 	<meta name="viewport"
+		content="initial-scale = 1.0, user-scalable = no, width=device-width, minimum-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta charset="utf-8">
+	<!--link rel="apple-touch-startup-image" href="/startup.png"-->
+	
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/zappApp.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/jquery.toastmessage.css" />
+	
+	<script src="jquery.mobile-1.0.1/jquery-1.7.1.min.js" type="application/javascript"></script>
+	<script>
+		$(document).bind("mobileinit", function() {
+			// configuration changes
+			$.mobile.allowCrossDomainPages = true;
+			$.mobile.pushStateEnabled = false;
+			$.mobile.orientationChangeEnabled = false;
+			$.support.touchOverflow = false; // always keep true
+			$.mobile.touchOverflowEnabled = false; // always keep true
+			$.mobile.autoInitialize = false;
+			//$.mobile.initializePage = false;
+			$.mobile.page.prototype.options.domCache = true;
+			//$.mobile.useFastClick = false;	
+			
+			if (navigator.userAgent.indexOf("Android") != -1)
+			{
+				$.mobile.defaultPageTransition = 'none';
+				$.mobile.defaultDialogTransition = 'none';
+			}
+			
+		});
+	</script>
+	<script src="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.js" type="application/javascript"></script>
+ 
+	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.toastmessage.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/touchslider.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.timer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/device.info.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.utils.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/static.data.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/html5sql.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.storage.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/navigate.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/data.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.API.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/test.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/functions.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/questionOfDay.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/teachMe.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/PT_Initial.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/PT.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.UI.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="tests/testSample.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/phonegap-events.js"></script>
+	<title>TESTZAPP</title>
+
+</head>
+<!--body class="ui-mobile-viewport"  onorientationchange="changeOrientation();"-->
+<body class="ui-mobile-viewport" onload='onLoad()'>
+
+	<!-- Splash Screen-->
+	<div data-role="page" id="pageSplash"></div>
+
+
+	<!-- Welcome Page-->
+	<div data-role="page" id="pageWelcome">
+		<div class="header">
+			<table style="border-collapse: collapse; width: 100%">
+				<tr>
+					<td class="align-left" style="width: 15%">&nbsp;</td>
+					<td align="center" style="width: 60%">Hi there!
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<section id="secZapLogo"
+				style="background-image: url(images/zapp/zap.png);">
+				<p align="center" style="font-weight: normal;">Thanks for
+					downloading</p>
+				<img src="images/testZapp.png" alt="" class="auto-margin"
+					style="padding-top: 5px; padding-bottom: 5px; background-size: contain;">
+				<p align="center"
+					style="padding-left: 20px; padding-right: 20px; padding-bottom: 5px; font-weight: normal;">Let's
+					get Zapp'ing with your test prep. We recommend that you login (or
+					register if you are new to Testzapp)</p>
+
+				<div id="divWelcomeForm" style="width: 100%">
+					<input class="auto-margin" type="email" name="userId" id="userId"
+						placeholder="E-mail Address(User ID)"> <input
+						class="auto-margin" type="password" name="userPassword"
+						id="userPassword" placeholder="Password (for TestZapp)"> <input
+						class="auto-margin hide" type="password"
+						name="userConfirmPassword" id="userConfirmPassword"
+						placeholder="Confirm Password entered above">
+					<div id="btnLoginLink" class="buttons orange auto-margin"
+						style="width: 80%">LOGIN</div>
+					<div id="btnRegister" class="buttons orange auto-margin"
+						style="width: 80%">REGISTER</div>
+					<table style="width: 92%">
+						<tr>
+							<td class="align-right"><a id="btnSkipForNow" class="link">OR,SKIP FOR NOW</a></td>
+						</tr>
+					</table>
+				</div>
+			</section>
+		</div>
+	</div>
+
+	<!--Home Page-->
+	<div data-role="page" id="pageHome">
+		<div class="header" style="">
+			<table style="border-collapse: collapse; width: 100%">
+				<tr>
+					<td class="align-left" style="width: 15%">&nbsp;</td>
+					<td align="center" style="width: 60%">Home
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="infoIcon" class="compass">&nbsp;</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div data-role="content">
+
+			<!--dailog for Help-->
+			<div id="my_disLayer" data-role="disLayer"></div>
+			<div id="dialogInfo" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseInfo"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					INFO<br>
+				</div>
+
+				<div class="helpText">
+					<p>TestZappCH App will prepare you for the Chemistry Subject test on the go – whenever, wherever. The App tracks time spent on each questions and overall performance. Best of all, it allows review of test results by topic so you can brush up those tougher subject areas.</p>
+					<br>
+					<p>While studying, checkout the flashcards in the Reference section or create your own personal decks. Try out the interactive periodic table, which includes ten essential element properties.</p>
+					<br>
+					<p>Register with TestZapp to get additional tests, backup your data and resume tests on the desktop computer.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<div id="darkLayerHome" class="darkClassMenu" style="display: none;">
+			</div>
+
+			<div id="containerBL" class="footer-pannel">
+				<div id="contentBL" class="contentBL">
+					<img id="zapLogo" src="images/zapp/zap.png" />
+					<div id="btnQOTD" class="buttons orange auto-margin">QUESTION
+						OF THE DAY</div>
+					<div id="btnTest" class="buttons orange auto-margin">TESTS</div>
+					<div id="btnReference" class="buttons orange auto-margin">
+						REFERENCE</div>
+
+	            <table border="0" style="width:100%" >
+	                <tr>
+	                    <td align='center' style="width:22%">
+	                        <a id="btnPageJudgeMe"><img src="images/Progress.png" style="height:40px; width:40px" alt="">
+						<br>  <span style="font-weight:normal;">Progress </span>
+	                        </a>
+	                    </td>
+	                    <td style="width:56%"></td>
+	                    <td align="center" style="width:22%">				
+	                        <a id="btnMyAccountRegistered" class="center"><img src="images/Settings.png" style="height:40px; width:40px"  alt ="">  <br>	<span style="font-weight:normal;">Settings</span>
+							</a>
+	                    </td>
+	                </tr>
+	            </table>
+
+				</div>
+			</div>
+
+
+			<!--div align="center" style="position: absolute;bottom: 0;width:88%; padding-bottom:5%; padding-left:5%; padding-right:5%;">
+           
+            
+        </div-->
+		</div>
+	</div>
+
+	<!--Regsister Page-->
+	<!--<div data-role="page" id="pageRegister">
+	<div class="header">
+		<table style="border-collapse:collapse; width:100%">
+			<tr>
+				<td class="align-left" style="width:15%">&nbsp;</td>
+				<td align="center" style="width:60%" >Register Now<div class="redLine"></div></td>
+				<td align="center" style="width:15%" >&nbsp; </td>
+			</tr>
+		</table>
+	</div>
+	<div data-role="content">
+		<p align="center" style="font-weight:normal;">
+			Please retype password and tap on register.<br/><br/>It's that simple!
+		</p>
+		<div style="width:100%">
+			<input class="auto-margin" type="email" name="userId" id="userId" placeholder="E-mail Address(User ID)"><br/>
+			<input class="auto-margin" type="password" name="userPassword" id="userPassword" placeholder="Password (for TestZapp)"><br/>
+			<input class="auto-margin" type="password" name="userConfirmPassword" id="userConfirmPassword" placeholder="Confirm Password entered above">
+			<div id = "btnRegister" class = "buttons orange auto-margin" style="width:80%"> REGISTER </div>
+		</div>
+	</div>
+</div>-->
+
+	<!--Login Page-->
+	<div data-role="page" id="pageLogin">
+		<div class="header">
+			<table style="border-collapse: collapse; width: 100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+					<div onClick="goBack('#pageWelcome')"
+							class="backButton">&nbsp;</div></td>
+					<td align="center" style="width: 60%">Please Login
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<p style="font-weight: normal;">Incorrect Password</p>
+			<p align="center" style="padding: 20px; font-weight: normal;">
+				Please retype your password or tap on forgot password link and your
+				password will be emailed to you<br />
+				<br />Let's get Zappin'!<br />
+				<br />
+			</p>
+			<div style="width: 100%">
+				<input class="auto-margin" type="email" name="userId1" id="userId1"
+					placeholder="E-mail Address(User ID)"><br /> <input
+					class="auto-margin" type="password" name="userPassword"
+					id="userPassword1" placeholder="Password (for TestZapp)">
+				<div id="btnLogin" class="buttons orange auto-margin"
+					style="width: 80%">LOGIN</div>
+				<div align="right" style="width: 90%">
+					<a id="lnkForgotPassword">FORGOT PASSWORD</a>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!--References Page-->
+	<div data-role="page" id="pageReference">
+		<div class="header">
+			<table style="border-collapse: collapse; width: 100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageHome')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Reference
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<div id="darkLayerReference" class="darkClass" style="display: none;">
+			</div>
+			<div align="center"
+				style="position: fixed; bottom: 0; width: 100%; left: 0;">
+				<!-- style="position: absolute; bottom: 0; width:100%; left: 0px;"-->
+
+				<div id="btnFlashCards" class="buttons orange auto-margin"
+					style="width: 80%">FLASH CARDS</div>
+				<div id="btnPeriodicTable" class="buttons orange auto-margin"
+					style="width: 80%">PERIODIC TABLE</div>
+
+
+				<br> <br>
+
+			</div>
+
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right">
+				<div style="padding-right: 12%;">
+					<a id="referencePageNavButton" class="btn-slide-reference"> <img
+						id="imgReferenceNavigate" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="referencePanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavReferenceHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavReferenceQOTD" align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavReferenceMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center">
+								<div class="referencesSelectedIcon"></div>
+								<div class="inActive">[REFERENCES]</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- My Account (Registered) Page-->
+	<div data-role="page" id="pageMyAccountRegistered">
+		<div class="header">
+			<table style="border-collapse: collapse; width: 100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageHome')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">My Account
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+		<div id="my_disLayer" data-role="disLayer"></div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<div id="darkLayerMyAccountRegistered" class="darkClass"
+				style="display: none;"></div>
+			<div id="divRegisterUser" style="display: none">
+				<div align="center">
+					<div align="center" id="btnChangePass"
+						class="buttons orange auto-margin" style="width: 80%">CHANGE
+						PASSWORD</div>
+				</div>
+				<div align="center">
+					<div align="center" id="btnLogout"
+						class="buttons orange auto-margin" style="width: 80%">LOGOUT</div>
+				</div>
+				<div align="center">
+					<div align="center" id="btnBackup"
+						class="buttons orange auto-margin" style="width: 80%">BACKUP</div>
+				</div>
+				<div align="center">
+					<div align="center" id="btnRestore"
+						class="buttons orange auto-margin" style="width: 80%">RESTORE</div>
+				</div>
+			</div>
+			<div id="divAnonymousUser" style="display: none">
+				<div align="center">
+					<div align="center" id="btnRegisterAnonymousUser"
+						class="buttons orange auto-margin" style="width: 80%">REGISTER</div>
+				</div>
+			</div>
+			<div align="center">
+				<div align="center" id="btnFeedback"
+					class="buttons orange auto-margin" style="width: 80%">FEEDBACK</div>
+			</div>
+			<div align="center">
+				<div align="center" id="btnAbout" class="buttons orange auto-margin"
+					style="width: 80%">ABOUT</div>
+			</div>
+			<div align="center" class="statusBox">
+				Manage Application
+				<div align="center" id="btnDropTable"
+					class="buttons orange auto-margin" style="width: 80%">CLEAR ALL DATA</div>
+				</div>
+		
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="MyAccountRegisteredNavButton"
+						class="btn-slide-register active"> <img
+						id="imgMyAccountRegistered" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="MyAccountRegisteredPanel" style="display: none;"
+				align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavMyAccountRegisteredHome"
+								align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavMyAccountRegisteredQOTD"
+								align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavMyAccountRegisteredMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavMyAccountRegisteredReference"
+								align="center">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!--About Page-->
+	<div data-role="page" id="pageAbout">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageMyAccountRegistered')"
+							class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">About
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		<div data-role="content">
+			<div style="width: 90%; margin: auto;">
+				<table style="width: 100%" class="statusBox">
+					<tr>
+						<td><u>TestZappCH (Beta)</u> <br/> V: <span id='spnVersion'>12.1
+						</span></td>
+					</tr>
+					<tr>
+						<td>Registered to: <span id='spnEmail'>Anonymous </span></td>
+					</tr>
+					<tr>
+						<td>Device Name: <span id='spnDeviceName'>xxx </span></td>
+					</tr>
+					<tr>
+						<td>TestZapp is a registered trademark of Scholearly, LLC.</td>
+					</tr>
+					<tr>
+						<td>© 2011-2012. All rights reserved.</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--Change Password Page -->
+	<div data-role="page" id="pageChangePassword">
+		<div class="header">
+			<table style="width: 100%"
+				style="border-collapse:collapse; width:100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageMyAccountRegistered')"
+							class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Change Password
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%"></td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<div align="center">
+				<div id="darkLayerChangePassword" class="darkClass"
+					style="display: none;"></div>
+				<input type="password" name="userCurrentPassword"
+					id="usercurrentPassword" placeholder="Current Password"><br />
+				<input type="password" name="userNewPassword" id="userNewPassword1"
+					placeholder="New Password"><br /> <input type="password"
+					name="userNewConfirmPassword" id="userNewConfirmPassword1"
+					placeholder="Confirm new Password"><br />
+				<div id="btnChangePassword" align="center"
+					class="buttons orange auto-margin" style="width: 80%">Confirm
+					Change</div>
+			</div>
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="ChangePasswordNavButton"
+						class="btn-slide-ChangePassword active"> <img
+						id="imgChangePassword" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="ChangePasswordPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavChangePasswordHome"
+								align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavChangePasswordQOTD"
+								align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavChangePasswordMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavChangePasswordReference"
+								align="center">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Judge Me Page-->
+	<div data-role="page" id="pageJudgeMe">
+		<div class="header">
+			<table style="width: 100%" style="border-collapse:collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageHome')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Progress View
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<div align="center">
+				<div id="btnSummary" align="center"
+					class="buttons orange auto-margin" style="width: 80%">Show
+					Summary Result</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- PaperSummaryResult-->
+	<div data-role="page" id="pagePaperSummary">
+		<div class="header" style="border-collapse: collapse;">
+			<table style="width: 100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageMyTest')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Test Summary
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForPaperSummary" class="compass"></div>
+
+						<div id="hideQuickNavPaperSummary" class="menu show">
+							<table>
+								<tr>
+									<td class="helpIcon"></td>
+									<td>
+										<div id="PaperSummaryProgressHelp" class="menuItem">Help
+											&nbsp;&nbsp;&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center" class="vertical-align-top"></td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<div id="darkLayerPaperSummary" class="darkClass"
+				style="display: none;"></div>
+			<div id="darkLayerMenuPaperSummary" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="papersummary" class="progresscontent"></div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<div id="btnPaperDetails" class="buttons orange auto-margin"
+				style="width: 80%">Show Details</div>
+			<!--dailog for Help-->
+			<div id="dialogPaperSummaryHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnClosePaperSummaryHelp"><img
+						src="images/close_icon.png" class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					PROGRESS-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This screen shows summary of the test and the SAT score. Tap on Show Details to review the correct answers and the rationale.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="PaperSummaryNavButton" class="btn-slide-PaperSummary active">
+						<img id="imgPaperSummary" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="PaperSummaryPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavPaperSummaryHome"
+								align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperSummaryQOTD"
+								align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperSummaryMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperSummaryReference"
+								align="center">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Review paperDetails for individual test-->
+	<div data-role="page" id="pagePaperDetails">
+		<div class="header" style="border-collapse: collapse;">
+			<table style="width: 100%">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pagePaperSummary')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Test(s) Details
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%"></td>
+				</tr>
+			</table>
+		</div>
+		<div data-role="content">
+			<div id="darkLayerPaperDetails" class="darkClass"
+				style="display: none"></div>
+			<div data-role="collapsible-set" data-theme="f">
+				<div data-role="collapsible" data-collapsed="false">
+					<h3>Incorrect Answers</h3>
+					<div id="divIncorrect" align="center"></div>
+
+				</div>
+				<div data-role="collapsible" data-collapsed="true">
+					<h3>Correct Answers with Timing Stat</h3>
+					<div id="divCorrect" align="center"></div>
+
+				</div>
+				<div data-role="collapsible" data-collapsed="true">
+					<h3>Skiped Questions</h3>
+					<div id="divSkipped" align="center"></div>
+
+				</div>
+				<div data-role="collapsible" data-collapsed="true">
+					<h3>Unattempted Questions</h3>
+					<div id="divUnattempted" align="center"></div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="PaperDetailsNavButton" class="btn-slide-PaperDetails active">
+						<img id="imgPaperDetails" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="PaperDetailsPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavPaperDetailsHome"
+								align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperDetailsQOTD"
+								align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperDetailsMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPaperDetailsReference"
+								align="center">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Review question Page-->
+	<div data-role="page" id="pageReviewQuestion">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pagePaperDetails')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%"><span
+						id="spnReviewQuestionType"> </span>
+						<div class="redLine"></div></td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForReviewQuestion" class="compass"></div>
+
+						<div id="hideQuickNavReviewQuestion" class="menu show">
+							<table>
+								<tr id="ReviewQuestionHelp">
+									<td class="helpIcon"></td>
+									<td class="line">
+										<div class="menuItem">HELP</div>
+
+									</td>
+								</tr>
+								<tr id="ReviewQuestionProgress">
+									<td class="progressIcon"></td>
+									<td class="line">
+										<div class="menuItem">PROGRESS</div>
+
+									</td>
+								</tr>
+								<tr id="menuReportQuestionReview">
+									<td class="feedbackIcon"></td>
+									<td>
+										<div class="menuItem">FEEDBACK</div>
+
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center" class="vertical-align-top"></td>
+				</tr>
+			</table>
+		</div>
+
+		<!--dailog for zoomed image-->
+		<div id="dialogForZoomedImageInRev"
+			class="help_web_dialog zoomedImage" style="display: none;">
+			<div class="align-right">
+				<a id="btnCloseForZoomedImageInRev"><img
+					src="images/close_icon.png" class="btnIcon"></a>
+			</div>
+
+			<div id="fullImageRev">
+				<table>
+					<tr>
+						<td><span id="theImageRev"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dailog end-->
+
+		<div id="darkLayerForZoomedImageInRev" class="darkClassImage"
+			style="display: none;"></div>
+
+		<div data-role="content">
+			<div id="darkLayerMenuReviewQuestion" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="darkLayerReviewQuestion" class="darkClass"
+				style="display: none;"></div>
+
+			<div>
+				<div class="arrowsContainer">
+					<div id="divReviewNextQuestion">
+						<img id="imgReviewNextQuestion" class="imgNext"
+							src="images/nxt1.png" alt="">
+					</div>
+
+					<div id="divReviewPrevQuestion">
+						<img id="imgReviewPrevQuestion" class="imgPrev"
+							src="images/prv1.png" alt="">
+					</div>
+				</div>
+			</div>
+
+			<div id="questionText"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogReviewQuestionHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseReviewQuestionHelp"><img
+						src="images/close_icon.png" class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					PROGRESS-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>
+						Your answer displays "Your answer” along with the time to answer the question. The correct answer is shown in green along with the rationale. Tap on the <img src="images/prv1.png" height="15px"
+							width="10px" alt=""> or <img src="images/nxt1.png"
+							height="15px" width="10px" alt=""> to review previous or next question.
+					</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+			<div>
+				<table width=100%>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<div id="divReviewNextQuestion">
+					<img id="imgReviewNextQuestion" class="imgNext"
+						src="images/nxt1.png" alt="">
+				</div>
+
+				<div id="divReviewPrevQuestion">
+					<img id="imgReviewPrevQuestion" class="imgPrev"
+						src="images/prv1.png" alt="">
+				</div>
+			</div>
+			<div>
+				&nbsp; <br />
+				<br />
+			</div>
+
+		</div>
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="ReviewQuestionNavButton"
+						class="btn-slide-ReviewQuestion active"> <img
+						id="imgReviewQuestion" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="ReviewQuestionPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavReviewQuestionHome"
+								align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavReviewQuestionQOTD"
+								align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavReviewQuestionMyTests"
+								align="center">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavReviewQuestionReference"
+								align="center">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--Feedback Page-->
+	<div data-role="page" id="pageFeedback">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="feedbackBackButton" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Feedback <span
+						id="divReportTestQuestion"></span>
+					<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		<div data-role="content">
+		<div id="my_disLayer" data-role="disLayer"></div>
+			<div id="feedbackHeaderText" style="width: 90%; margin: auto;"
+				class='questionAnswerColor'></div>
+			<div id="testFeedback" style="width: 90%; margin: auto;">
+				<table align='center' style="width: 100%">
+					<tr id="QuestionRow" onclick='choiceQ()'>
+						<td width='10%' valign='middle' align='right'>
+							<div id='btnQ' class='circle-button'>Q</div>
+						</td>
+						<td align='left' width='90%'
+							class='questionAnswerColor tdTextBorder'>Report Question
+							related issue</td>
+					</tr>
+					<tr id="AnswerRow" onclick='choiceO()'>
+						<td width='10%' valign='middle' align='right'>
+							<div id='btnO' class='circle-button'>A</div>
+						</td>
+						<td align='left' width='90%'
+							class='questionAnswerColor tdTextBorder'>Report Answer
+							related issue</td>
+					</tr>
+					<tr id="rationaleRow" onclick='choiceR()'>
+						<td width='10%' valign='middle' align='right'>
+							<div id='btnR' class='circle-button'>R</div>
+						</td>
+						<td align='left' width='90%'
+							class='questionAnswerColor tdTextBorder'>Report Rational
+							related issue</td>
+					</tr>
+					<tr>
+						<td align='center' colspan='2'>
+							<TextArea class='.scrollEffect' rows='3' col='10' id='txtReportDescription' placeholder='Please provide more information' maxlength='200' width='100%'></textarea>
+						</td>
+					</tr>
+					<tr>
+						<td align='center' colspan='2'>
+							<div align="center" id="btnSendFeedback"
+								class="buttons orange auto-margin">Send Feedback</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--Select Question Page-->
+	<div data-role="page" id="pageSelectQuestion">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageQuestionTest')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Question List
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="selectCompassQuesList" class="compass">&nbsp;</div>
+						<div id="menuQuesList" class="menu">
+							<table>
+								<tr id="menuQuesListHelp">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--dailog for zoomed image-->
+		<div id="dialogForZoomedImageInSelQues"
+			class="help_web_dialog zoomedImage" style="display: none;">
+			<div class="align-right">
+				<a id="btnCloseForZoomedImageInSelQues"><img
+					src="images/close_icon.png" class="btnIcon"></a>
+			</div>
+
+			<div id="fullImageSelQues">
+				<table>
+					<tr>
+						<td><span id="theImageSelQues"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dailog end-->
+
+		<div id="darkLayerForZoomedImageInSelQues" class="darkClassImage"
+			style="display: none;"></div>
+
+		<div data-role="content">
+			<div id="darkLayerMenuQuesList" class="darkClassMenu"
+				style="display: none;"></div>
+			<!--dailog for Help-->
+			<div id="dialogQuesListHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseQuesListHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					TEST SUMMARY-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>
+						Un-attempted questions are shown in yellow, answered questions in orange and skipped questions in blue. Tap on <img src="images/list_view.png"
+							height="15px" width="15px"> to change to line view mode which displays questions and your answers. Tap on any box to attempt a question or to review the answer.
+					</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<table>
+				<tr>
+					<td>
+						<div id="qlTestName"></div>
+					</td>
+					<td>
+						<div>
+							<img id="imgThumbnailView" src="images/thumbnail_view.png"
+								class="questImgSize" alt=""> <img id="imgThumbnailView2"
+								src="images/list_view.png" class="questImgSize" alt="">
+						</div>
+					</td>
+				</tr>
+			</table>
+			<div id="tableQuestions" class="alpha60"></div>
+
+			<div id="panelTimer" style="display: none;">
+				<table style="width: 100%; height: 100%">
+					<tr>
+						<td style="width: 50%" class="timerTitles" align="center">Time
+							Remaining</td>
+					</tr>
+					<tr>
+						<td class="timerContents" align="center">
+							<div id="countdown_box" class="alpha60">
+								<div id="countdown_div" class="timerxx">
+									<B>Relax!</B>
+								</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<!--Practice Test Page-->
+	<div id="pageMyTest" data-role="page">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageHome')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">My Tests
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="selectCompassMyTests" class="compass">&nbsp;</div>
+						<div id="menuMyTests" class="menu">
+							<table>
+								<tr id="menuMyTestsHelp">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<!--div id="content" data-role="content"-->
+		<div data-role="content">
+			<div id="my_disLayer" data-role="disLayer"></div>
+			<div id="darkLayerMyTest" class="darkClass" style="display: none;">
+			</div>
+			<div id="darkLayerMenuMytests" class="darkClassMenu"
+				style="display: none;"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogMytestsHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseMytestsHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					MY TEST-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>Tap on the test name to start or resume a test. Each test consists of 85 questions which have to be completed in an hour. For tests in progress, the bar displays percentage of the test completed along with questions and time remaining.<br/><br/>
+The SAT score is displayed for completed tests and the answers can be reviewed by tapping on the test name.<br/><br/>
+If a test is not completed within one hour, you have the option to continue practicing without tabulating the results. For the un-scored tests, progress bar displays the percentage of the test completed, the number of questions remaining and the time taken.<br/><br/>
+</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<div id="divMyTestList"></div>
+			<br>
+			<table style="width: 90%" id="tblMoreTests">
+				<tr>
+					<td>&nbsp;&nbsp;</td>
+					<td align="right">
+						<div class="align-right" style="width: 100%">
+							<a id="btnGetMoreTests" class="link"> MORE TESTS </a>
+						</div>
+					</td>
+				</tr>
+			</table>
+			<br />
+			<br />
+		</div>
+
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="myTestPageNavButton" class="btn-slide-mytest active"> <img
+						id="imgMyTestNavigate" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="myTestPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavMyTestHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavMyTestQOTD" align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center">
+								<div class="testSelectedIcon"></div>
+								<div class="inActive">[TESTS]</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavMyTestLearn">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!--Question Test Page-->
+	<div id="pageQuestionTest" data-role="page" class="test">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td style="width: 15%" align="center" valign="top">
+						<div id='questionTestBack' class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%"><span
+						id="spnQuestionType"> </span>
+					<div class="redLine"></div></td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="selectCompass" class="compass">&nbsp;</div>
+						<div id="menuTest" class="menu">
+							<table>
+								<tr id="menuTestHelp">
+									<td class="helpIcon"></td>
+									<td class="line">
+										<div class="menuItem">HELP&nbsp;</div>
+
+									</td>
+								</tr>
+
+								<tr id="menuPT">
+									<td class="ptIcon"></td>
+									<td class="line">
+										<div class="menuItem">PT</div>
+									</td>
+								</tr>
+
+								<tr id="menuTestOverview">
+									<td class="testOvervwIcon"></td>
+									<td class="line">
+										<div class="menuItem">TEST OVERVIEW</div>
+									</td>
+								</tr>
+
+								<tr id="menuTestRemaining">
+									<td class="timeRemainingIcon"></td>
+									<td class="line">
+										<div class="menuItem">TIME REMAINING</div>
+									</td>
+								</tr>
+
+								<tr id="menuPauseExam">
+									<td class="pauseIcon"></td>
+									<td class="line">
+										<div class="menuItem">PAUSE</div>
+									</td>
+								</tr>
+
+								<tr id="menuStopExam">
+									<td class="submitIcon"></td>
+									<td class="line">
+										<div class="menuItem">SUBMIT</div>
+									</td>
+								</tr>
+								<tr id="menuReportQuestion">
+									<td class="feedbackIcon"></td>
+									<td>
+										<div class="menuItem">FEEDBACK</div>
+
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--dailog for zoomed image-->
+		<div id="dialogForZoomedImageInTest"
+			class="help_web_dialog zoomedImage" style="display: none;">
+			<div class="align-right">
+				<a id="btnCloseForZoomedImageInTest"><img
+					src="images/close_icon.png" class="btnIcon"></a>
+			</div>
+
+			<div id="fullImageTest">
+				<table>
+					<tr>
+						<td><span id="theImageTest"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dailog end-->
+
+		<!--div id="content" data-role="content"-->
+		<div data-role="content">
+			<div id="darkLayer1" class="darkClass" style="display: none;">
+			</div>
+			<div id="darkLayerForZoomedImageInTest" class="darkClassImage"
+				style="display: none;"></div>
+			<div id="darkLayerMenuTest" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="divToast" style="display: none"></div>
+
+			<div>
+				<div class="arrowsContainer">
+					<div id="divNextQuestion">
+						<img id="imgNextQuestion" class="imgNext" src="images/nxt1.png"
+							alt="">
+					</div>
+
+					<div id="divPrevQuestion">
+						<img id="imgPrevQuestion" class="imgPrev" src="images/prv1.png"
+							alt="">
+					</div>
+				</div>
+			</div>
+
+			<div id="divTestQuestionView"></div>
+
+			<div id="dialogTestHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseTestHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					TEST-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>
+						Tap on the answer to highlight the selection which can be changed prior to confirmation by tapping on previous <img
+							src="images/prv1.png" height="15px" width="10px" alt=""> or
+						next <img src="images/nxt1.png" height="15px" width="10px" alt="">
+						question arrows. If the next or previous questions arrows are tapped without making a selection, the question is skipped. <font
+							color="#000000">. In the SAT test, half a point is deducted for the wrong answer so come back to skipped questions if not sure of the answer. </font>
+						For type two questions starting with question number 101 all three selections must be made before tapping on the confirmation arrows otherwise the question is skipped.<br />
+						<br /> While taking the test, the periodic table can be referenced however the question and the test timers do not pause.<br />
+						<br /> The test can be paused at anytime; to resume the test, tap on the test name in the My Tests screen.<br />
+						<br /> The submit option allows test to be scored prior to the allocated 60 minutes.
+
+					</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<!--dailog on test comlpetion-->
+			<div id="dialogTest" class="test_web_dialog">
+				<table style="width: 100%; border: 0px;">
+					<tr>
+						<td class="helpTitle align-left">Test Timeout</td>
+					</tr>
+				</table>
+				<div style="height: 65px; margin-top: 10px">
+					<p style="padding-left: 10px;">
+						Your time to complete this test is finished.<br> Do you want
+						to submit this test and score or continue without scoring?
+					</p>
+				</div>
+				<br />
+				<div align="center">
+					<table class="align-center">
+						<tr>
+							<td>
+								<div>
+									<div id="btnSubmitAndScore" class="buttons orange auto-margin"
+										style="width: 80%">Submit</div>
+								</div>
+							</td>
+							<td>&nbsp;</td>
+							<td>
+								<div>
+									<div id="btnContinue" class="buttons orange auto-margin"
+										style="width: 80%">Continue</div>
+								</div>
+							</td>
+						</tr>
+					</table>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<!-- right next button~~~~~~~~~~~~-->
+			<div>
+				<table width=100%>
+					<tr>
+						<td>&nbsp;</td>
+					</tr>
+				</table>
+				<div id="divNextQuestion">
+					<img id="imgNextQuestion" class="imgNext" src="images/nxt1.png"
+						alt="">
+				</div>
+
+				<div id="divPrevQuestion">
+					<img id="imgPrevQuestion" class="imgPrev" src="images/prv1.png"
+						alt="">
+				</div>
+			</div>
+			<div>
+				&nbsp; <br />
+				<br />
+			</div>
+
+		</div>
+
+
+		<div class="footer-pannel">
+			<div style="padding-right: 12%;" align="right">
+				<div>
+					<a id="questionPageNavButton" class="btn-slide-testmenu active">
+						<img id="imgNavigate2" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="panel2" style="display: none;">
+
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavQOTD" align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center">
+								<div class="testSelectedIcon"></div>
+								<div class="inActive">[TESTS]</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavLearn">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<!-- Flash Card Deck Page-->
+	<div id="pageDeckOfFlashCard" data-role="page">
+
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageReference')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Deck List
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavigationDeck" class="compass">&nbsp;</div>
+						<div id="showcompassDeck" class="menu">
+							<table>
+								<tr id="menuFcDeckHelp">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<!--div id="content" data-role="content"-->
+		<div data-role="content">
+			<div id="overlaydeck" class="fc_web_dialog_overlay"></div>
+			<div id="darkLayerdeck" class="darkClass" style="display: none;">
+			</div>
+
+			<div id="darkLayerMenuDeck" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="listofdeck" align="center"></div>
+			<br>
+			<div id="deckofuser" align="center"></div>
+			<table style="width: 92%">
+				<tr>
+					<td class="align-right"><a id="btnNewFlashCardDeck"
+						class="link">NEW FLASH CARD DECK</a> <br>
+					<br></td>
+				</tr>
+			</table>
+		</div>
+		<div id="dialogDeckFCHelp" class="help_web_dialog">
+			<div class="align-right">
+				<a id="btnCloseDeckFCHelp"><img src="images/close_icon.png"
+					class="btnIcon"></a>
+			</div>
+			<div class="helpTitle align-left">
+				FLASHCARD-HELP<br>
+			</div>
+
+			<div class="helpText">
+				<p>
+					Tap on the deck name to get started. The number next the deck name show cards remaining and total number of cards (in parenthesis). <br />
+					<br /> New Flashcard Deck allows you to create your own personal deck(s) (<img src="images/icons/icon_customflashcards.png"
+						height="15px" width="15px"> ). Once the personal deck is created, simply tap on the deck name to add cards. The cards can be edited or more cards added by opening the personal flashcard decks. <br />
+					<br /> Tap <img src="images/icons/icon_flashcards.png"
+						height="15px" width="15px"> or <img
+						src="images/icons/icon_customflashcards.png" height="15px"
+						width="15px"> to view stats for the deck.
+				</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+		<!--dialog exit-->
+
+
+
+		<div id="dialogdeck" class="fc_web_dialog">
+			<div id="newDeck" class="align-center">
+				<table style="width: 100%; border: 0px;">
+					<tr>
+						<td class="helpTitle align-left">NEW FLASH CARD DECK</td>
+						<td class="align_right"><a id="btnCloseDeck"><img
+								src="images/close_icon.png" class="btnIcon"></a></td>
+					</tr>
+				</table>
+
+				<table class="align-center" style="width: 100%" border="0">
+					<tr>
+						<td align="center" colspan="3">
+							<div data-role="fieldcontain">
+								<input type="text" name="txtDeckName" id="txtDeckName"
+									placeholder="DeckName" maxlength="25" class="toCapitalize">
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td style="width: 30%"></td>
+						<td>
+							<div id="btnNewDeck" class="buttons orange auto-margin"
+								style="width: 80%" onClick="createNewDeck()">Create</div>
+						</td>
+						<td style="width: 30%"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dialog-->
+
+		<div id="overlayfc" class="fc_web_dialog_overlay"></div>
+
+		<div id="dialogfc" class="fc_web_dialog">
+			<div id="pageNewFlashCard" class="align-center">
+				<table style="width: 100%; border: 0px;">
+					<tr>
+						<td class="helpTitle align-left">Flash Card</td>
+						<td class="align-right"><a id="btnCloseDia"><img
+								src="images/close_icon.png" class="btnIcon"></a></td>
+					</tr>
+				</table>
+				<div align="center">
+					<input type="text" name="txtgroupName" id="txtgroupName"
+						placeholder="Group" disabled="disabled">
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+						<input type="text" name="txtquestion" id="txtquestion"
+							placeholder="Question" maxlength="25">
+					</div>
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+						<input type="text" name="txtcue" id="txtcue" placeholder="Cue"
+							maxlength="25">
+					</div>
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+						<input type="text" name="txtanswer" id="txtanswer"
+							placeholder="Ans" maxlength="100">
+					</div>
+				</div>
+				<table class="align-center" style="width: 100%">
+					<tr>
+						<td style="width: 30%"></td>
+						<td>
+							<div id="savebtndiv">
+								<div id="btnSaveInitialCard" class="buttons orange auto-margin"
+									style="width: 80%">Save</div>
+							</div>
+						</td>
+						<td style="width: 30%"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dialog-->
+
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="fcDeckPageNavButton" class="btn-slide-fcDeck active"> <img
+						id="imgFcDeckNavigate" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="fcDeckPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
+
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavFcDeckHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavFcDeckQOTD" align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavFcDeckMyTests">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavFcDeckLearn">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+	<!-- /Flash Card Deck Page-->
+
+	<!--FC Deck Summary Page-->
+	<div data-role="page" id="pageFCDeckSummary">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td style="width: 15%" align="center" valign="top">
+						<div onClick="goBack('#pageDeckOfFlashCard')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Flash Card Deck
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		<div data-role="content">
+			<div>
+				<div id="FlashCardDeckSummary" align="center"></div>
+			</div>
+		</div>
+
+	</div>
+	<!--/FC Deck Summary Page-->
+
+	<!--Flash Card Page-->
+	<div id="pageFlashCard" data-role="page">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;" border="0">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageDeckOfFlashCard')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Flash Card
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavigationFC" class="compass">&nbsp;</div>
+						<div id="showcompassFC" class="menu"></div>
+					</td>
+				</tr>
+			</table>
+
+		</div>
+
+		<div data-role="content">
+			<table border="0" class="align-center" style="width: 100%">
+				<tr>
+					<td style="width: 35%">
+						<div class="right_check">
+							<div id="btncross" class="halfCircleLeft">
+								<img id="sad" src="images/quicknavimgs/sad.png" alt="" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div id="block" class="block">
+							<div id="frontView" class="front side image"
+								style="-webkit-transition: -webkit-transform 1.5s;">
+								<img id="myImage" src="images/white.png" class="fSize" alt="">
+								<div class="fc_text">
+									<p id="queNumberP">
+										<span id="queNumber"> </span>
+									</p>
+									<div style="color: black">
+										<div id="contentDiv" class="contentDiv">
+											<p id="question">
+												<b></b>
+											</p>
+											<p id="cue">
+												<b></b>
+											</p>
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div id="backView" class="back side image"
+								style="-webkit-transition: -webkit-transform 1.5s;">
+								<img id="myImageb" src="images/black.png" class="bSize" alt="" />
+
+								<div class="fc_text">
+									<div id="answerDiv" onclick="flipCard()">
+										<p id="ansTextFC">
+											<span id="ansTitle"> </span>
+										</p>
+										<br />
+										<p id="answer">
+											<b></b>
+										</p>
+									</div>
+								</div>
+							</div>
+						</div> <!-- End block -->
+					</td>
+					<td style="width: 35%">
+						<div class="left_cross">
+							<div id="btnDelete" class="halfCircleRight">
+								<img id="happy" src="images/quicknavimgs/happy.png" alt="" />
+							</div>
+						</div>
+					</td>
+				</tr>
+			</table>
+
+			<div id="darkLayerdeckfc" class="darkClass" style="display: none;">
+			</div>
+
+			<!--dailog for Help-->
+			<div id="dialogFCHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseFCHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					FLASHCARD-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p id="FCHelpText"></p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+			<div id="overlayufc" class="fc_web_dialog_overlay"></div>
+			<div id="dialogufc" class="fc_web_dialog">
+				<div id="pageAddNewFlashCard" class="align-center">
+					<table style="width: 100%; border: 0px;">
+						<tr>
+							<td class="helpTitle align-left">Flash Card</td>
+							<td class="align-right"><a id="btnCloseUDia"><img
+									src="images/close_icon.png" class="btnIcon"></a></td>
+						</tr>
+					</table>
+
+					<div align="center">
+					
+						<input type="text" name="txtgroupNameN" id="txtgroupNameN"
+							disabled="disabled">
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+							<input type="text" name="txtquestionN" id="txtquestionN"
+								placeholder="Question" maxlength="25">
+						</div>
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+							<input type="text" name="txtcueN" id="txtcueN" placeholder="Cue"
+								maxlength="25">
+						</div>
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
+							<input type="text" name="txtanswerN" id="txtanswerN"
+								placeholder="Ans" maxlength="100">
+						</div>
+					</div>
+					<table class="align-center" style="width: 100%">
+						<tr>
+							<td style="width: 30%"></td>
+							<td>
+								<div id="savebtndiv">
+									<div id="btnSaveUserCard" class="buttons orange auto-margin"
+										style="width: 80%">Save</div>
+								</div>
+							</td>
+							<td style="width: 30%"></td>
+						</tr>
+					</table>
+				</div>
+				<!--new Flash Card Page End-->
+			</div>
+			<!--dialog-->
+		</div>
+	</div>
+	<!--Flash Card Page End-->
+
+	<!--FC Summary Page-->
+	<div data-role="page" id="pageFCSummary">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td style="width: 15%" align="center" valign="top">
+						<div onClick="goBack('#pageFlashCard')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Flash Card Summary
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%">&nbsp;</td>
+				</tr>
+			</table>
+		</div>
+
+		<div data-role="content">
+			<div id="fclist" class="alpha60"></div>
+		</div>
+	</div>
+	<!--FC Summary Page End-->
+
+	<!-- Periodic Table -->
+	<div id="pageTable" align="center" data-role="page">
+		<div class="header" style="width: 100%">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageReference')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Periodic Table
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForPT" class="compass">&nbsp;</div>
+
+						<div id="hideQuickNavPT" class="menu show">
+							<table border="0">
+								<tr id="ptHelp">
+									<td class="helpIcon"></td>
+									<td class="line">
+										<div class="menuItem">HELP</div>
+									</td>
+								</tr>
+
+								<tr id="displayElemName">
+									<td><img id="elmName"
+										src="images/quicknavimgs/icon_correct.png"
+										class="btnIcon hide" alt=""></td>
+									<td class="line">
+										<div class="menuItem">DISPLAY NAME</div>
+									</td>
+								</tr>
+
+								<tr id="displayAtWt">
+									<td><img id="elmWt"
+										src="images/quicknavimgs/icon_correct.png"
+										class="btnIcon hide" alt=""></td>
+									<td class="line">
+										<div class="menuItem">DISPLAY AT.WT</div>
+									</td>
+								</tr>
+
+								<tr id="searchElemName">
+									<td class="search"></td>
+									<td>
+										<div class="menuItem">SEARCH</div>
+
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div id="darkLayerPT" class="darkClass" style="display: none;">
+		</div>
+		<div id="darkLayerMenuPT" class="darkClassMenu" style="display: none;">
+		</div>
+		<!--dailog for Help-->
+		<div id="dialogPTHelp" class="help_web_dialog">
+			<div class="align-right">
+				<a id="btnClosePTHelp"><img src="images/close_icon.png"
+					class="btnIcon"></a>
+			</div>
+			<div class="helpTitle align-left">
+				PT-HELP<br>
+			</div>
+
+			<div class="helpText">
+				<p align="left">The periodic table is your best friend and resource for acing the SAT test. Tap on any element to open the 3x3 elements around view – tap on the center element to view properties.<br/><br/>
+				Use the search feature to find element by name, atomic number, group or period and view details.</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+		<!--dialog exit-->
+
+		<div data-role="content">
+			<div id="tableID" style="width: 100%;" align="left"></div>
+		</div>
+
+
+		<div id="ptFooter" class="footer-pannel show">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="ptPageNavButton" class="btn-slide-pt active"> <img
+						id="imgPtNavigate" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="ptPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavPtHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" id="btnNavPtQOTD" align="center">
+								<div class="quesIcon"></div>
+								<div class="nav-button">QUESTIONS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavPtMyTests">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavPtLearn">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="pageGrid" align="center" data-role="page">
+
+		<div class="header" style="width: 100%">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageTable')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Elements Around
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForPTGridPage" class="compass">&nbsp;</div>
+						<div id="hideQuickNavPTGridPage" class="menu show">
+							<table>
+								<tr id="ptHelpGridPage">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		<div id="darkLayerMenuPTGridPage" class="darkClassMenu"
+			style="display: none;"></div>
+
+		<div data-role="content">
+			<table id="gridID" align="center" border="0" cellpadding="5"
+				cellspacing="1" width="100%">
+				<tbody>
+					<tr>
+						<td>&nbsp;</td>
+						<th id="" class="grp prvCol">prvCol</th>
+						<th id="" class="grp curCol">curCol</th>
+						<th id="" class="grp nxtCol">nxtCol</th>
+						<td>&nbsp;</td>
+					</tr>
+					<tr>
+						<th id="" class="prd prvRow">prvRow</th>
+						<td align="center" id="elemA" class="othElem">elemA</td>
+						<td align="center" id="elemB" class="othElem">elemB</td>
+						<td id="elemC" class="othElem">elemC</td>
+						<th id="" class="prd prvRow">prvRow</th>
+					</tr>
+					<tr>
+						<th id="" class="prd curRow">curRow</th>
+						<td id="elemH" class="othElem">elemH</td>
+						<td id="elemX" class="curElem">elemX</td>
+						<td id="elemD" class="othElem">elemD</td>
+						<th id="" class="prd curRow">curRow</th>
+					</tr>
+					<tr>
+						<th id="" class="prd nxtRow">nxtRow</th>
+						<td id="elemG" class="othElem">elemG</td>
+						<td id="elemF" class="othElem">elemF</td>
+						<td id="elemE" class="othElem">elemE</td>
+						<th id="" class="prd nxtRow">nxtRow</th>
+					</tr>
+					<tr>
+						<td>&nbsp;</td>
+						<th id="" class="grp prvCol">prvCol</th>
+						<th id="" class="grp curCol">curCol</th>
+						<th id="" class="grp nxtCol">nxtCol</th>
+						<td>&nbsp;</td>
+					</tr>
+				</tbody>
+			</table>
+			<div id="thumbLoc" align="center">thumbLoc</div>
+		</div>
+
+		<!--dailog for Help-->
+		<div id="dialogPTHelpGridPage" class="help_web_dialog">
+			<div class="align-right">
+				<a id="btnClosePTHelpGridPage"><img src="images/close_icon.png"
+					class="btnIcon"></a>
+			</div>
+			<div class="helpTitle align-left">
+				PT-HELP–Elements around<br>
+			</div>
+
+			<div class="helpText">
+				<p align="left">This 3x3 view can be panned by tapping on the neighboring element. Below the 3x3 view is a thumbnail view of the period table, tap anywhere to enlarge. Tap on the center element to view properties.</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+		<!--dialog exit-->
+	</div>
+	<!-- /gridPage -->
+
+	<div id="pageSearch" align="center" data-role="page">
+		<div class="header" style="width: 100%">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageTable')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Search Element
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForPTSearchPage" class="compass">&nbsp;</div>
+						<div id="hideQuickNavPTSearchPage" class="menu show">
+							<table>
+								<tr id="ptHelpSearchPage">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div id="darkLayerMenuPTSearchPage" class="darkClassMenu"
+			style="display: none;"></div>
+
+		<div data-role="content">
+			<div id="searchID" style="padding-left: 0px; padding-top: 10px;"
+				align="center"></div>
+		</div>
+
+		<!--dailog for Help-->
+		<div id="dialogPTHelpSearchPage" class="help_web_dialog">
+			<div class="align-right">
+				<a id="btnClosePTHelpSearchPage"><img
+					src="images/close_icon.png" class="btnIcon"></a>
+			</div>
+			<div class="helpTitle align-left">
+				SE-HELP<br>
+			</div>
+
+			<div class="helpText">
+				<p align="left">Type full or part of the element name; symbol; atomic weight
+					or group name to search. Tap on any element in the filtered list to
+					view details.</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+		<!--dialog exit-->
+
+	</div>
+	<!-- /searchPage -->
+
+	<div id="pageLearn" align="center" data-role="page">
+		<div class="header" style="width: 100%">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageGrid')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Element Details
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForPTLearnPage" class="compass">&nbsp;</div>
+						<div id="hideQuickNavPTLearnPage" class="menu show">
+							<table>
+								<tr id="ptHelpLearnPage">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<div id="darkLayerMenuPTLearnPage" class="darkClassMenu"
+			style="display: none;"></div>
+
+		<div class="contentID">
+			<div id="learnID">learnID</div>
+			<!--dailog for Help-->
+			<div id="dialogPTHelpLearnPage" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnClosePTHelpLearnPage"><img
+						src="images/close_icon.png" class="btnIcon"/></a>
+				</div>
+				<div class="helpTitle align-left">
+					PT-HELP–Element details<br>
+				</div>
+
+				<div class="helpText">
+					<p>Tap anywhere to view neighboring elements. Below the detailed view is the thumbnail view of the periodic table; tap on any element to view properties.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+	</div>
+	<!--Periodic Table End-->
+
+	<!-- question Of The Day -->
+	<div id="pageQuestionOfDayList" data-role="page" class="test">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageHome')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Question Of The Day!
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForQotdList" class="compass"></div>
+
+						<div id="hideQuickNavQotdList" class="menu">
+							<table>
+								<tr id="qotdListHelp">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP&nbsp;</div>
+
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+
+		<!--div id="content" data-role="content"-->
+		<div data-role="content">
+			<div id="darkLayerQotd" class="darkClass" style="display: none;">
+			</div>
+			<div id="darkLayerMenuQotd" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="divQOTDList"></div>
+			<br />
+			<!--dailog for Help-->
+			<div id="dialogQOTDListHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseQOTDListHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					QOTD-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p id="QOTDHelpText"></p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+		<div class="footer-pannel">
+			<div align="right" style="padding-right: 10px;">
+				<div style="padding-right: 12%;" align="right">
+					<a id="qotdPageNavButton" class="btn-slide-qotd active"> <img
+						id="imgQotdNavigate" src="images/up_arrow.png"
+						class="varyNavigaterSize" alt="" style="color: #0071BC">&nbsp;MENU
+					</a>
+				</div>
+			</div>
+			<div id="qotdPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
+					<tr>
+						<td>
+							<div style="width: 100%" id="btnNavQotdHome" align="center">
+								<div class="homeIcon "></div>
+								<div class="nav-button">HOME</div>
+							</div>
+
+						</td>
+						<td>
+							<div style="width: 100%" align="center">
+								<div class="quesSelectedIcon"></div>
+								<div class="inActive">[QUESTIONS]</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavQotdMyTests">
+								<div class="testIcon"></div>
+								<div class="nav-button">TESTS</div>
+							</div>
+						</td>
+						<td>
+							<div style="width: 100%" align="center" id="btnNavQotdLearn">
+								<div class="referencesIcon"></div>
+								<div class="nav-button">REFERENCES</div>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+	</div>
+
+	<div id="pageQOD" data-role="page" class="test">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div onClick="goBack('#pageQuestionOfDayList')" class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Question Of The Day!
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForQotd" class="compass">&nbsp;</div>
+
+						<div id="hideQuickNavQotd" class="menu show">
+							<table>
+								<tr id="qotdHelp">
+									<td class="helpIcon"></td>
+									<td style="width: 100px;">
+										<div class="menuItem">HELP&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+
+			</table>
+		</div>
+		<div id="darkLayerQd" class="darkClass" style="display: none;">
+		</div>
+
+		<!--dailog for zoomed image-->
+		<div id="dialogForZoomedImageInQOD"
+			class="help_web_dialog zoomedImage" style="display: none;">
+			<div class="align-right">
+				<a id="btnCloseForZoomedImageInQOD"><img
+					src="images/close_icon.png" class="btnIcon"></a>
+			</div>
+
+			<div id="fullImageQOD">
+				<table>
+					<tr>
+						<td><span id="theImageQOD"></span></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!--dailog end-->
+
+		<!--dailog for Help-->
+		<div id="dialogQOTDHelp" class="help_web_dialog">
+			<div class="align-right">
+				<a id="btnCloseQOTDHelp"><img src="images/close_icon.png"
+					class="btnIcon"></a>
+			</div>
+			<div class="helpTitle align-left">
+				QOTD-HELP<br>
+			</div>
+
+			<div class="helpText">
+				<p>
+					Chemistry subject tests feature three types of questions. Tap on
+					the answer and if the selection is correct, a pop-up window will
+					appear with rationale.<br />
+					<br /> If the selection is incorrect, a pop-up window will provide
+					the option to display the correct answer. By closing the pop-up,
+					another answer can be selected.
+				</p>
+				<p>&nbsp;</p>
+			</div>
+		</div>
+		<!--dialog exit-->
+
+		<div id="darkLayerForZoomedImageInQOD" class="darkClassImage"
+			style="display: none;"></div>
+
+		<!--div id="content" data-role="content"-->
+		<div data-role="content">
+
+			<div id='divQuestionPart1'
+				class='questionAnswerColor divQuestPart hide'>React with metal
+				to produce hydrogen gas</div>
+			<br />
+			<table style="width: 100%">
+				<tr style="background-color: lightgray" class="alpha60">
+					<td class="vertical-align-middle align-left"
+						style="width: 100%; color: #0071BC;">
+						<div id="divSelectedAnswer1" class="divChooseAns"
+							style="font-weight: normal;"></div>
+					</td>
+				</tr>
+			</table>
+			<div id="divOptions1" class="alpha60"></div>
+			<br>
+			<div id='divQuestionPartA'
+				class='questionAnswerColor divQuestPart hide'>React with metal
+				to produce hydrogen gas</div>
+
+			<br />
+			<div id="overlayQOTD" class="web_overlay_qotd"></div>
+
+			<div id="dialogQOTD" class="web_dialog_qotd">
+				<div id="closeDialogQOTD" class="qotdCloseDialog" align="right">
+					<a><img src="images/close_icon.png" class="btnIcon"></a>
+				</div>
+				<div id="qotdDialogText" class="qotdDialogClass"></div>
+				<div id="showRational" class="qotdDialogClass hide"></div>
+				<div id="divTapForAnswer" class="hide" align="left">
+					<br> Tap To View Answer <br>
+					<div>&nbsp;</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!--question Of The Day End-->
+
+
+	<!-- Pages added by Avinash For Progress Report -->
+	<!--Cumulative Progress -->
+	<div data-role="page" id="pageCumulativeProgress"
+		data-url="pageCumulativeProgress">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div class="backButton" onClick="goBack('#pageHome')">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Cumulative Progress
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForCumulativeProgress" class="compass"></div>
+
+						<div id="hideQuickNavCumulativeProgress" class="menu show">
+							<table>
+								<tr>
+									<td class="helpIcon"></td>
+									<td>
+										<div id="cumulativeProgressHelp" class="menuItem">Help
+											&nbsp;&nbsp;&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center" class="vertical-align-top"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content">
+			<div id="darkLayerMenuCumulativeProgress" class="darkClassMenu"
+				style="display: none;"></div>
+
+			<div id="divCumulative" class="progresscontent"></div>
+			<div id="divOverAllDetails" class="progresscontent"></div>
+			<div id="divTopicWise" class="progresscontent"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogCumulativeProgressHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseCumulativeProgressHelp"><img
+						src="images/close_icon.png" class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					CUMULATIVE PROGRESS-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This screen shows summary of all the scored tests. By topics review allows results to be reviewed by topic. The number in parenthesis shows correct answers out of all the questions for the topic.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+
+		</div>
+
+		<div class="footer1"></div>
+	</div>
+	<!-- end-->
+
+	<!--TestLIstFor Progress -->
+	<div data-role="page" id="pageTestListProgress"
+		data-url="pageTestListProgress">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div class="backButton"
+							onClick="goBack('#pageCumulativeProgress')">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Scored Tests
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForTestListProgress" class="compass"></div>
+
+						<div id="hideQuickNavTestListProgress" class="menu show">
+							<table>
+								<tr>
+									<td class="helpIcon"></td>
+									<td>
+										<div id="testListProgressHelp" class="menuItem">Help
+											&nbsp;&nbsp;&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center" class="vertical-align-top"></td>
+				</tr>
+			</table>
+		</div>
+		<div class="content">
+			<div id="darkLayerMenuTestListProgress" class="darkClassMenu"
+				style="display: none;"></div>
+
+			<div id="divTestListProgress"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogTestListProgressHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseTestListProgressHelp"><img
+						src="images/close_icon.png" class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					TEST PROGRESS-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This is list of all completed and scored tests.Tap on Test
+						to view details of the test.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+		<div class="footer1"></div>
+	</div>
+	<!-- end-->
+
+	<!--Individual Test Progress -->
+	<div data-role="page" id="pageIndividualtestProgress"
+		data-url="pageIndividualtestProgress">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td align="center" style="width: 15%" valign="top">
+						<div class="backButton" onClick="goBack('#pageTestListProgress')">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Test Progress
+						<div class="redLine"></div>
+					</td>
+
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForITProgress" class="compass"></div>
+
+						<div id="hideQuickNavITProgress" class="menu show">
+							<table>
+								<tr>
+									<td class="helpIcon"></td>
+									<td>
+										<div id="itpHelp" class="menuItem">Help
+											&nbsp;&nbsp;&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td colspan="3" align="center" class="vertical-align-top"></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="content">
+			<div id="darkLayerMenuITProgress" class="darkClassMenu"
+				style="display: none;"></div>
+
+			<div id="divIndividialProgress" class="progresscontent"></div>
+			<div id="divIndividialProgressOverAllDetails" class="progresscontent"></div>
+			<div id="divIndividialProgressTopicWise" class="progresscontent"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogITProgressHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseITProgressHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					PROGRESS-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This screen allows you to review test results by topic. The
+						number in parenthesis show how many of the questions were answered
+						correctly from the tests. The % shows percentage of the correct
+						answers.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+		<div class="footer1"></div>
+	</div>
+	<!-- end-->
+	<!-- End of Progress Report-->
+
+	<!-- Backup List-->
+	<div data-role="page" id="pageBackupList">
+		<div class="header">
+			<table style="width: 100%; border-collapse: collapse;">
+				<tr>
+					<td style="width: 15%" align="center" valign="top">
+						<div onClick="goBack('#pageMyAccountRegistered')"
+							class="backButton">&nbsp;</div>
+					</td>
+					<td align="center" style="width: 60%">Backup List
+						<div class="redLine"></div>
+					</td>
+					<td align="center" style="width: 15%" valign="top">
+						<div id="quickNavForBackupList" class="compass"></div>
+
+						<div id="hideQuickNavBackupList" class="menu show">
+							<table>
+								<tr>
+									<td class="helpIcon"></td>
+									<td>
+										<div id="backupListHelp" class="menuItem">Help
+											&nbsp;&nbsp;&nbsp;</div>
+									</td>
+								</tr>
+							</table>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+
+		<div data-role="content">
+			<div id="my_disLayer" data-role="disLayer"></div>
+			<div id="darkLayerBackupList" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="backupList" style="width: 90%; margin: auto;"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogBackupListHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseBackupListHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					BACKUP LIST-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This screeen shows a list of backups taken from different devices. The list is in descending order of dates as the backup were taken.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+	</div>
+	<!-- end-->
+
+
+</body>
+</html>

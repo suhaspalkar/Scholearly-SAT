@@ -1,0 +1,283 @@
+@charset "utf-8";
+/* CSS Document */
+
+.header {
+	float: left;
+	width: 100%;
+	font-family: sans-serif;
+	font-size: 1.1em;
+	text-decoration: none;
+	text-align: center;
+	font-weight: bolder;
+	color:#0d688e;
+}
+
+.helpIcon
+{
+	height:18px;
+	width:18px;	
+}
+
+.ptIcon
+{
+
+	height:18px;
+	width:18px;	
+	
+	
+}
+.testOvervwIcon
+{
+	height:18px;
+	width:18px;	
+	
+}
+.timeRemainingIcon
+{
+	height:18px;
+	width:18px;	
+}
+.pauseIcon
+{
+	height:18px;
+	width:18px;	
+}
+.cardRemainingIcon
+{
+	height:18px;
+	width:18px;	
+}
+.cardRemainingCustomIcon
+{
+	height:18px;
+	width:18px;	
+}
+.resetDeckIcon
+{
+	height:18px;
+	width:18px;	
+}
+.addCardIcon
+{
+	height:18px;
+	width:18px;	
+}
+.editCardIcon
+{
+	height:18px;
+	width:18px;	
+}
+.mark
+{
+	height:18px;
+	width:18px;	
+}
+.search
+{
+	height:18px;
+	width:18px;	
+}
+.submitIcon
+{
+	height:18px;
+	width:18px;	
+}
+.compass{
+	height:30px;
+	width:30px;
+}
+.backButton{
+	height:30px;
+	width:30px;
+}
+
+.varyNavigaterSize {
+    width:20px;
+	height:10px;
+	border:none;
+}
+
+.questImgSize {
+	 width:30px;
+	 height:30px;
+	 border:none;
+}
+
+.block {
+	 
+	 width:180px;
+	 height:260px;
+	
+	 -webkit-border-radius:1.5em;
+	-moz-border-radius:1.5em;
+	 border-radius:1.5em;
+	
+}
+#block{
+	 -webkit-border-radius:1.5em;
+	-moz-border-radius:1.5em;
+	 border-radius:1.5em;
+}
+#answer
+{ 
+	width:170px;
+	word-wrap:break-word;
+	text-align:center;
+	height: 135px;
+	font-size:1.6em;
+	margin-top: -6px;
+
+	
+}
+#question
+{    
+		width:170px;
+		
+}
+
+.image .fc_text {
+	position:absolute;
+	top:17px; 
+	width:170px;
+	height: 220px;
+	left:5px;
+	font-size:.8em;
+	text-align:center;	
+}
+
+#contentDiv
+{
+	height: 220px;
+	width:170px;
+	margin-top:20%;
+	padding-top:5%;
+   
+}
+#answerDiv
+{
+	height: 220px;
+	width:170px;
+}
+.fSize {
+	  width:180px;
+	 height:260px;
+	 -webkit-border-radius:1.5em;
+	-moz-border-radius:1.5em;
+	 border-radius:1.5em;
+}
+
+.bSize {
+	 width:180px;
+	 height:260px;
+	 -webkit-border-radius:1.5em;
+	-moz-border-radius:1.5em;
+	 border-radius:1.5em;
+}
+
+/*	.fc_web_dialog
+	{
+		 display: none;
+		 position: fixed;
+		 width: 200px;
+		 height: 230px;
+		 top: 40%;
+		 left: 50%;
+		 margin-left: -100px;
+		 margin-top: -100px;
+		 background-color: #ffffff;
+		 border: 2px solid #336699;
+		 padding: 0px;
+		 z-index: 102;
+		 font-family: Verdana;
+		 font-size: 10pt;
+	}
+
+	#btnYes,#btnNo
+	{
+		font-size:0.7em;
+		width:5em;
+
+	}*/
+/*	#txtgroupName{height:1em; width:9em;}
+	#txtquestion{height:1em; width:9em;}
+	#txtcue{height:1em; width:9em;}
+	#txtanswer{height:1em; width:9em;}*/
+
+#crosscheck
+{
+	width:170px;
+}
+#queNumberP
+{
+	margin-top:2px;
+	font-size:2em; 
+	
+}
+#question
+{	
+	margin-top:3em;
+	font-size:1.6em;
+}
+#cue
+{  
+ 	 margin-top:1px;
+	font-size:1.6em;
+	//color:#FF0000;
+}
+#ansTextFC
+{   
+    margin-top:9px;
+	font-size:2em; 
+}
+.margine
+{
+margin-left:15%;
+}
+
+/*#fcSummary{
+	font-size:0.8em;
+}
+*/
+/*#btnNewCard, #btnMycards, #btnAllcards, #btnShufflecards, #btnSequentialcards, #btnDelete,#btnDeleteA, #btnEdit, #btnQAMode, #btnAQMode, #btncross,#btncrossA
+{
+width:2em;
+height:2em;	
+}*/
+
+
+.halfCircleLeft
+{
+		width: 20px;
+		height: 40px;
+		
+		 -webkit-border-radius:200px 0 0 200px;
+		-moz-border-radius:200px 0 0 200px;
+		 border-radius:200px 0 0 200px;
+		background:#333;
+		border: 2px solid #999;
+ }
+ .halfCircleRight
+{
+		width: 20px;
+		height: 40px;
+		
+		 -webkit-border-radius:0 200px  200px 0;
+		-moz-border-radius:0 200px  200px 0;
+		 border-radius:0 200px  200px 0;
+		background:#333;
+		border: 2px solid #999;
+ }
+#happy
+{
+padding-top:70%;
+padding-left:5%;
+width:1em;
+height:1em;
+}
+#sad
+{
+padding-top:70%;
+padding-right:5%;
+width:1em;
+height:1em;
+}
