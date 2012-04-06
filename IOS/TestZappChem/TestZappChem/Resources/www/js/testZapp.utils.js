@@ -695,4 +695,25 @@ $( document ).bind( "pagecreate create", function( e ){
 
 })(jQuery);
 
+$("#quickNavForBackupList").live('tap', function(event, ui) {
+    event.preventDefault();
+    ShowDialogHelpBackupList(true);
+});
 
+function ShowDialogHelpBackupList(modal) { // to show toast/msgbox 
+    $("#darkLayerBackupList").show();
+    $("#dialogBackupListHelp").fadeIn(300);
+
+    if (modal) {
+        $("#darkLayerBackupList").unbind("click");
+    } else {
+        $("#darkLayerBackupList").click(function(e) {
+            HideDialogHelpBackupList();
+        });
+    }
+}
+
+function HideDialogHelpBackupList() { // to hide toast / msgbox
+    $("#dialogBackupListHelp").fadeOut(300);
+    $("#darkLayerBackupList").hide();
+}

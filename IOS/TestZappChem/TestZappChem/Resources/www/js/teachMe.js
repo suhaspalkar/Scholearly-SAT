@@ -395,17 +395,22 @@ function generateCard(arrayOfDeck) {
 function setFCMenu(deckId) {
     // var totalDefDeck = getDefDeckNo();
     var setmenu;
-    var defaultHelp = "<div>When you open the deck of cards, swipe to move to the next card. "+
-                   "Select the <img src='images/quicknavimgs/happy.png' alt='' height='15px' width='15px'/> if you got the flashcard answer correct and the <img src='images/quicknavimgs/sad.png' alt='' height='15px' width='15px'/> if you got the answer incorrect. "+
-                   "Marking these will help you figure out what you need to learn and how much studying you have to do.<br/><br/>"+
+    var defaultHelp = "<div>Tap on the card to flip the card or select "+
+                   "<img src='images/quicknavimgs/happy.png' alt='' height='15px' width='15px'/> if you knew the answer or <img src='images/quicknavimgs/sad.png' alt='' height='15px' width='15px'/> if you did not; the next card are will be displayed in random order."+
+                   "<br/><br/> (Add status icon) Status shows deck summary with mastered card shown in green and un-mastered in red. "+
 
-                   "Status shows mastered (green) and un-mastered (red). <br/><br/>"+
-                   "Pause saves the status of the deck and opens the Deck List page.<br/><br/>"+
-                   "You can reshuffle the deck at any time and study your cards again.<br/><br/></div>";
-	var customHelp =  "<div>SStatus shows mastered (green) and un-mastered (red). <br/><br/> "+
-						"Pause saves the status of the deck and opens the Deck List page.<br/><br/>"+
-						"At anytime the deck can be reshuffled and studied again.<br/><br/>"+
-						"More questions can be added to the personal decks by tapping ADD and the existing personal cards can also be edited using EDIT.</div>";			   
+                   "<br/><br/> (Add pause icon) Pause saves the status of the deck and opens the Deck List page."+
+                   "<br/><br/> (Add reset icon) You can reshuffle the deck at any time and start over again."+
+                   "<br/><br/></div>";
+	var customHelp =  "<div>Tap on the card to view the answer or select "+
+                   "<img src='images/quicknavimgs/happy.png' alt='' height='15px' width='15px'/> if you knew the answer or <img src='images/quicknavimgs/sad.png' alt='' height='15px' width='15px'/> if you did not; the next card are will be displayed in random order."+
+                   "<br/><br/> (Add personal status icon) Status shows deck summary with mastered card shown in green and un-mastered in red. "+
+
+                   "<br/><br/> (Add pause icon) Pause saves the status of the deck and opens the Deck List page."+
+                   "<br/><br/> (Add reset icon) You can reshuffle the deck at any time and start over again."+
+				   "<br/><br/> (Add “+ ”icon) Add additional cards to the personal deck."+
+				   "<br/><br/> (Add edit icon) Edit card being displayed."+
+                   "</div>";			   
     if (isUser) {
 		$("#FCHelpText").html(customHelp);
         setDeckImage = 'cardRemainingCustomIcon';
@@ -1122,9 +1127,9 @@ if (winW <= 320) {
 
 //QuickNavigation
 $("#quickNavigationDeck").live('tap', function(event, ui) {
-    event.preventDefault();
+     event.preventDefault();
     $("#showcompassDeck").toggle("fast");
-    toggleScreenStateNavigation('#darkLayerMenuDeck');
+    ShowDialogHelpDeckFC(true);
 });
 
 $("#showcompassDeck").live('tap', function(event, ui) {

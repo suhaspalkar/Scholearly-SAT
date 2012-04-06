@@ -459,7 +459,7 @@ function getRemainingTest() {
 					var jsonData = $.parseJSON(xmlData);
 					apiName = "getPendingTests";
 					xmlData = null;
-					saveTestSet(jsonData.Root)
+					saveTestSet(jsonData.Root);
 				}catch(e){
 					hideLoader();
                     if(xmlData == '-7:No other test found.'){
@@ -695,7 +695,7 @@ function getTestAPI(maxTests , onlyRegister , isAnonymous){
 					totalTests = 0;
 					if(onlyRegister){
 						// true to register test at locally 
-						registerTest(maxTests , userId)
+						registerTest(maxTests , userId);
 					}else{
 						var testJSONData = $.parseJSON(xmlData);
 						parseJSON(testJSONData.Root);
@@ -1019,7 +1019,7 @@ function processTestData(testId, testName, timeLimit){
 						testId : testId,
 						testName: testName,
 						timeLimit: timeLimit
-					}
+					};
 					
 					if(oneTimeInitialization){
 						activateScreen();

@@ -99,7 +99,7 @@ $(".ui-page-active #gridID").live('swipeleft', function(event, ui) {
     var r = elements[an][5] * 1;
     var c = elements[an][4] * 1;
     if (tab[r][c + 1] != undefined) {
-        populateEtab(tab[r][c + 1]); S
+        populateEtab(tab[r][c + 1]); 
     }
 });
 
@@ -220,6 +220,9 @@ function populateEtab(an) {
         $('#thumbLoc').html(tmpStr);
 
         // adjusting width of thumb PT on gridPage
+		$("#thumb name").css("display","none");
+        $("#thumb atomicwt").css("display","none");
+        
         var fS = $('#pageGrid #thumb').css("font-size");
         fS = fS.replace(/px/, "");
         fS = fS * 1;
@@ -544,9 +547,7 @@ $("#hideQuickNavPT").live('tap', function(event, ui) {
 
 $("#quickNavForPTGridPage").live('tap', function(event, ui) {
     event.preventDefault();
-
-    $("#hideQuickNavPTGridPage").toggle("fast");
-    toggleScreenEffectForPT('#darkLayerMenuPTGridPage');
+    ShowDialogHelpPTGridPage(true);
 });
 
 $("#hideQuickNavPTGridPage").live('tap', function(event, ui) {
@@ -557,9 +558,7 @@ $("#hideQuickNavPTGridPage").live('tap', function(event, ui) {
 
 $("#quickNavForPTLearnPage").live('tap', function(event, ui) {
     event.preventDefault();
-
-    $("#hideQuickNavPTLearnPage").toggle("fast");
-    toggleScreenEffectForPT('#darkLayerMenuPTLearnPage');
+    ShowDialogHelpPTLearnPage(true);
 });
 
 $("#hideQuickNavPTLearnPage").live('tap', function(event, ui) {
@@ -571,8 +570,7 @@ $("#hideQuickNavPTLearnPage").live('tap', function(event, ui) {
 
 $("#quickNavForPTSearchPage").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavPTSearchPage").toggle("fast");
-    toggleScreenEffectForPT('#darkLayerMenuPTSearchPage');
+    ShowDialogHelpPTSearchPage(true);
 });
 
 $("#hideQuickNavPTSearchPage").live('tap', function(event, ui) {

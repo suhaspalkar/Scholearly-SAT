@@ -1127,9 +1127,9 @@ if (winW <= 320) {
 
 //QuickNavigation
 $("#quickNavigationDeck").live('tap', function(event, ui) {
-    event.preventDefault();
+     event.preventDefault();
     $("#showcompassDeck").toggle("fast");
-    toggleScreenStateNavigation('#darkLayerMenuDeck');
+    ShowDialogHelpDeckFC(true);
 });
 
 $("#showcompassDeck").live('tap', function(event, ui) {

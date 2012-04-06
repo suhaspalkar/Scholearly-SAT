@@ -215,7 +215,7 @@ function handleOrientation(evt){
 				orientation = "landscape";
 			}
 			else {
-				orientation = "portrait"
+				orientation = "portrait";
 			}
 		}	
 	}catch(ex){}
@@ -250,7 +250,7 @@ function isAndroid() {
         || ua.match(/Dalvik/)
         || ua.match(/GINGERBREAD/)
         || ua.match(/Linux;.*Mobile Safari/)
-        || ua.match(/Linux 1\..*AppleWebKit/)
+        || ua.match(/Linux 1\..*AppleWebKit/);
 };
 
  
@@ -341,13 +341,13 @@ function generateBackUpList( backup ,i){
 	var backupList ="";
 	var testDetails = backup.testDetails;
 	if (testDetails != undefined){
-		var dt = backup.DateTime.split('(')[0].trim()
+		var dt = backup.DateTime.split('(')[0].trim();
 		var listItem = {
 			DateTime : dt,
 			deviceId : backup.deviceId
-		}
+		};
 				
-		var param = JSON.stringify(listItem).replaceAll('"','&quot;')
+		var param = JSON.stringify(listItem).replaceAll('"','&quot;');
 		
 		var strCollapsible = (i==0) ? "data-collapsed='false'" : "";
 		 

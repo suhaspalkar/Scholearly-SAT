@@ -5,7 +5,7 @@
 	text-decoration: none;
 	text-shadow: none;
 	font-family: "Droid Sans", Helvetica, sans-serif;
-	-webkit-text-size-adjust:auto;
+	//-webkit-text-size-adjust:auto;
 }
 
 /*avoiding flicker effect*/
@@ -15,7 +15,7 @@ body{
 	//-webkit-transform:translateX(0);
 	//-webkit-transform:translate3d(0,0,0);
 	//-webkit-perspective: 1000; 
-	-webkit-backface-visibility: hidden;
+	//-webkit-backface-visibility: hidden;
 }
 
 .ui-page,.ui-input-text{
@@ -38,12 +38,10 @@ body{
 	padding-top:15px;
 	background: #ddd8d7;
     background-color:#ddd8d7;	
-	-webkit-backface-visibility:hidden;
-	overflow:hidden;
 	
-	/*
+	/*-webkit-backface-visibility:hidden;
+	overflow:hidden;
 	margin-bottom:1em;
-	overflow:auto;
 	min-height:340px;
 	*/
 }	

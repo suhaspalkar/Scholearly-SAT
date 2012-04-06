@@ -5,7 +5,7 @@
 	text-decoration: none;
 	text-shadow: none;
 	font-family: "Droid Sans", Helvetica, sans-serif;
-	-webkit-text-size-adjust:auto;
+	//-webkit-text-size-adjust:auto;
 }
 
 /*avoiding flicker effect*/
@@ -38,12 +38,10 @@ body{
 	padding-top:15px;
 	background: #ddd8d7;
     background-color:#ddd8d7;	
-	-webkit-backface-visibility:hidden;
-	overflow:hidden;
 	
-	/*
+	/*-webkit-backface-visibility:hidden;
+	overflow:hidden;
 	margin-bottom:1em;
-	overflow:auto;
 	min-height:340px;
 	*/
 }	

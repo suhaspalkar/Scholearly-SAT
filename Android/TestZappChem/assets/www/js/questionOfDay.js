@@ -608,8 +608,7 @@ function toggleScreenEffectForQotd(layer) {
 
 $("#quickNavForQotd").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavQotd").toggle("fast");
-    toggleScreenEffectForQotd('#darkLayerQd');
+    ShowDialogHelpQOTD(true);
 });
 
 $("#hideQuickNavQotd").live('tap', function(event, ui) {
@@ -646,9 +645,8 @@ $("#btnCloseQOTDHelp").live('tap', function(event, ui) {
 
 // quick Nav for QOTD Date List
 $("#quickNavForQotdList").live('tap', function(event, ui) {
-    event.preventDefault();
-    $("#hideQuickNavQotdList").toggle("fast");
-    toggleScreenEffectForQotd('#darkLayerMenuQotd');
+   event.preventDefault();
+    ShowDialogHelpQOTDList(true);
 });
 
 $("#hideQuickNavQotdList").live('tap', function(event, ui) {

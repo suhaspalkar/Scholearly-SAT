@@ -1953,8 +1953,7 @@ function toggleScreenEffectForProgress(layer) {
 // For Individual Progress
 $("#quickNavForITProgress").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavITProgress").toggle("fast");
-    toggleScreenEffectForProgress('#darkLayerMenuITProgress');
+    ShowDialogHelpITProgress(true);
 });
 $("#hideQuickNavITProgress").live('tap', function(event, ui) {
     event.preventDefault();
@@ -1989,8 +1988,7 @@ $("#darkLayerMenuITProgress").live('tap', function(event, ui) {
 // For TestListProgress
 $("#quickNavForTestListProgress").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavTestListProgress").toggle("fast");
-    toggleScreenEffectForProgress('#darkLayerMenuTestListProgress');
+    ShowDialogHelpTestListProgress(true);
 });
 $("#hideQuickNavTestListProgress").live('tap', function(event, ui) {
     event.preventDefault();
@@ -2024,9 +2022,8 @@ $("#darkLayerMenuTestListProgress").live('tap', function(event, ui) {
 // End
 // For CumulativeProgress
 $("#quickNavForCumulativeProgress").live('tap', function(event, ui) {
-    event.preventDefault();
-    $("#hideQuickNavCumulativeProgress").toggle("fast");
-    toggleScreenEffectForProgress('#darkLayerMenuCumulativeProgress');
+   event.preventDefault();
+    ShowDialogHelpCumulativeProgress(true);
 });
 $("#hideQuickNavCumulativeProgress").live('tap', function(event, ui) {
     event.preventDefault();
@@ -2098,16 +2095,16 @@ $("#darkLayerMenuPaperDetails").live('tap', function(event, ui) {
 // For PaperSummary
 $("#quickNavForPaperSummary").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavPaperSummary").toggle("fast");
+    ShowDialogHelpPaperSummary(true);
     toggleScreenEffectForProgress('#darkLayerMenuPaperSummary');
 });
-$("#hideQuickNavPaperSummary").live('tap', function(event, ui) {
+/*$("#hideQuickNavPaperSummary").live('tap', function(event, ui) {
     event.preventDefault();
     $("#hideQuickNavPaperSummary").toggle("fast");
     ShowDialogHelpPaperSummary(true);
-});
+});*/
 function ShowDialogHelpPaperSummary(modal) { // to show toast/msgbox 
-    $("#darkLayerMenuPaperSummary").show();
+    //$("#darkLayerMenuPaperSummary").show();
     $("#dialogPaperSummaryHelp").fadeIn(300);
 
     if (modal) {
@@ -2127,7 +2124,6 @@ $("#btnClosePaperSummaryHelp").live('tap', function(event, ui) {
 });
 $("#darkLayerMenuPaperSummary").live('tap', function(event, ui) {
     event.preventDefault();
-    $("#hideQuickNavPaperSummary").hide();
     HideDialogHelpPaperSummary();
 });
 

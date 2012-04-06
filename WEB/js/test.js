@@ -1247,16 +1247,15 @@ $('#selectCompass').live('tap',function(event, ui){
 }); 
 
 $('#selectCompassQuesList').live('tap',function(event, ui){ 
-		event.preventDefault();
-	$("#menuQuesList").toggle("fast");
+	event.preventDefault();
 	toggleMenuDisplay(true,"darkLayerMenuQuesList");
+	ShowDialogHelp(true,"dialogQuesListHelp","darkLayerMenuQuesList");
 });
 
 $('#selectCompassMyTests').live('tap',function(event, ui){ 
 	event.preventDefault();
-	
-	$("#menuMyTests").toggle("fast");
 	toggleMenuDisplay(true,"darkLayerMenuMytests");
+	ShowDialogHelp(true,"dialogMytestsHelp","darkLayerMenuMytests");
 });
 	
 /*$('#pageQuestionTest').live('swipeleft',function(event, ui){
@@ -1497,7 +1496,6 @@ $('#darkLayerMenuTest').live('tap',function(event, ui){
 
 $('#darkLayerMenuQuesList').live('tap',function(event, ui){ 
 	event.preventDefault();
-   	$("#menuQuesList").hide();
 	ShowDialogHelp(false,"dialogQuesListHelp","darkLayerMenuQuesList");
 });
 
