@@ -408,7 +408,7 @@ function setFCMenu(deckId) {
 
                    "<br/><br/> (Add pause icon) Pause saves the status of the deck and opens the Deck List page."+
                    "<br/><br/> (Add reset icon) You can reshuffle the deck at any time and start over again."+
-				   "<br/><br/> (Add “+ ”icon) Add additional cards to the personal deck."+
+				   "<br/><br/> (Add ï¿½+ ï¿½icon) Add additional cards to the personal deck."+
 				   "<br/><br/> (Add edit icon) Edit card being displayed."+
                    "</div>";			   
     if (isUser) {

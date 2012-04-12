@@ -665,7 +665,7 @@ $('#btnSkipForNow').live('tap', function(event, ui) {
 function changeMobilePage(pageName) {
 
     try{
-		if(pageName == '#pageFeedback'){
+		if(pageName == '#pageFeedback' || pageName == '#pageFlashCard'){
 			$(pageName).page('destroy').page();
 			//$(pageName).page().trigger('pagecreate');
 		}

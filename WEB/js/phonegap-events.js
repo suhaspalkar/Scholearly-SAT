@@ -9,7 +9,7 @@ function onDeviceReady() {
     document.addEventListener("online", onOnline, false);
     document.addEventListener("pause", onPause, false);
     document.addEventListener("backbutton", onBack, false);
-    initDatabase();
+    //initDatabase();
 }
 
 //Handle the offline event

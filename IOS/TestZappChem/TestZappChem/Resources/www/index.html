@@ -1,81 +1,72 @@
 <!DOCTYPE HTML>
-<html>
-<!--manifest="testZapp.manifest"> -->
+<html> <!--manifest="testZapp.manifest"> -->
 <head>
-<meta name="viewport"
-	content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, target-densityDpi=device-dpi" />
-
-<meta name="apple-mobile-web-app-capable" content="yes" />
-<meta charset="utf-8">
-<!--link rel="apple-touch-startup-image" href="/startup.png"-->
-
-<link rel="stylesheet" type="text/css"
-	href="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.css" />
-<link rel="stylesheet" type="text/css" href="./css/zappApp.css"
-	media="screen">
-<link rel="stylesheet" type="text/css"
-	href="css/jquery.toastmessage.css" />
-
-<script src="jquery.mobile-1.0.1/jquery-1.7.1.min.js"
-	type="application/javascript"></script>
-<script>
-	$(document).bind("mobileinit", function() {
-		// configuration changes
-		$.mobile.allowCrossDomainPages = true;
-		$.mobile.pushStateEnabled = false;
-		$.mobile.orientationChangeEnabled = false;
-		$.support.touchOverflow = false; // always keep true
-		$.mobile.touchOverflowEnabled = false; // always keep true
-		$.mobile.autoInitialize = false;
-		//$.mobile.initializePage = false;
-		$.mobile.page.prototype.options.domCache = true;
-		//$.mobile.useFastClick = false;	
-
-		if (navigator.userAgent.indexOf("Android") != -1) {
-			$.mobile.defaultPageTransition = 'none';
-			$.mobile.defaultDialogTransition = 'none';
-		}
-
-	});
-</script>
-<script src="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.js"
-	type="application/javascript"></script>
-
-
-<script type="text/javascript" charset="utf-8"
-	src="js/jquery.toastmessage.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/touchslider.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/jquery.timer.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/device.info.js"></script>
-<script type="text/javascript" charset="utf-8"
-	src="js/testZapp.utils.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/static.data.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/html5sql.js"></script>
-
-<script type="text/javascript" charset="utf-8"
-	src="js/testZapp.storage.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/navigate.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/data.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/testZapp.API.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/test.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/functions.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/questionOfDay.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="js/teachMe.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/PT_Initial.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/PT.js"></script>
-<script type="text/javascript" charset="utf-8" src="js/testZapp.UI.js"></script>
-
-<script type="text/javascript" charset="utf-8" src="tests/testSample.js"></script>
-<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
-<script type="text/javascript" charset="utf-8"
-	src="js/phonegap-events.js"></script>
-<title>TESTZAPP</title>
+ 	<meta name="viewport"
+		content="initial-scale = 1.0, user-scalable = no, width=device-width, minimum-scale=1, maximum-scale=1">
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta charset="utf-8">
+	<!--link rel="apple-touch-startup-image" href="/startup.png"-->
+	
+	<link rel="stylesheet" type="text/css" href="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/zappApp.css" media="screen">
+	<link rel="stylesheet" type="text/css" href="css/jquery.toastmessage.css" />
+	
+	<script src="jquery.mobile-1.0.1/jquery-1.7.1.min.js" type="application/javascript"></script>
+	<script>
+		$(document).bind("mobileinit", function() {
+			// configuration changes
+			$.mobile.allowCrossDomainPages = true;
+			$.mobile.pushStateEnabled = false;
+			$.mobile.orientationChangeEnabled = false;
+			$.support.touchOverflow = false; // always keep true
+			$.mobile.touchOverflowEnabled = false; // always keep true
+			$.mobile.autoInitialize = false;
+			//$.mobile.initializePage = false;
+			$.mobile.page.prototype.options.domCache = true;
+			//$.mobile.useFastClick = false;	
+			
+			/* 
+			if (navigator.userAgent.indexOf("Android") != -1)
+			{
+				$.mobile.defaultPageTransition = 'none';
+				$.mobile.defaultDialogTransition = 'none';
+			} */
+			
+		});
+	</script>
+	<script src="jquery.mobile-1.0.1/jquery.mobile-1.0.1.min.js" type="application/javascript"></script>
+ 
+	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.toastmessage.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/touchslider.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/jquery.timer.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/device.info.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.utils.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/static.data.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/html5sql.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.storage.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/navigate.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/data.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.API.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/test.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/functions.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/questionOfDay.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="js/teachMe.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/PT_Initial.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/PT.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/testZapp.UI.js"></script>
+	
+	<script type="text/javascript" charset="utf-8" src="tests/testSample.js"></script>
+	<script type="text/javascript" charset="utf-8" src="phonegap-1.4.1.js"></script>
+	<script type="text/javascript" charset="utf-8" src="js/phonegap-events.js"></script>
+	<title>TESTZAPP</title>
 
 </head>
 <!--body class="ui-mobile-viewport"  onorientationchange="changeOrientation();"-->
@@ -124,8 +115,7 @@
 						style="width: 80%">REGISTER</div>
 					<table style="width: 92%">
 						<tr>
-							<td class="align-right"><a id="btnSkipForNow" class="link">OR,SKIP
-									FOR NOW</a></td>
+							<td class="align-right"><a id="btnSkipForNow" class="link">OR,SKIP FOR NOW</a></td>
 						</tr>
 					</table>
 				</div>
@@ -163,18 +153,11 @@
 				</div>
 
 				<div class="helpText">
-					<p>TestZappCH App will prepare you for the Chemistry Subject
-						test on the go – whenever, wherever. The App tracks time spent on
-						each questions and overall performance. Best of all, it allows
-						review of test results by topic so you can brush up those tougher
-						subject areas.</p>
+					<p>TestZappCH App will prepare you for the Chemistry Subject test on the go – whenever, wherever. The App tracks time spent on each questions and overall performance. Best of all, it allows review of test results by topic so you can brush up those tougher subject areas.</p>
 					<br>
-					<p>While studying, checkout the flashcards in the Reference
-						section or create your own personal decks. Try out the interactive
-						periodic table, which includes ten essential element properties.</p>
+					<p>While studying, checkout the flashcards in the Reference section or create your own personal decks. Try out the interactive periodic table, which includes ten essential element properties.</p>
 					<br>
-					<p>Register with TestZapp to get additional tests, backup your
-						data and resume tests on the desktop computer.</p>
+					<p>Register with TestZapp to get additional tests, backup your data and resume tests on the desktop computer.</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
@@ -192,20 +175,20 @@
 					<div id="btnReference" class="buttons orange auto-margin">
 						REFERENCE</div>
 
-					<table style="width: 100%; border: 0">
-						<tr>
-							<td align='center' style="width: 22%"><a id="btnPageJudgeMe"><img
-									src="images/Progress.png" style="height: 40px; width: 40px"
-									alt=""> <br> <span style="font-weight: normal;">Progress
-								</span> </a></td>
-							<td style="width: 56%"></td>
-							<td align="center" style="width: 22%"><a
-								id="btnMyAccountRegistered" class="center"><img
-									src="images/Settings.png" style="height: 40px; width: 40px"
-									alt=""> <br> <span style="font-weight: normal;">Settings</span>
-							</a></td>
-						</tr>
-					</table>
+	            <table border="0" style="width:100%" >
+	                <tr>
+	                    <td align='center' style="width:22%">
+	                        <a id="btnPageJudgeMe"><img src="images/Progress.png" style="height:40px; width:40px" alt="">
+						<br>  <span style="font-weight:normal;">Progress </span>
+	                        </a>
+	                    </td>
+	                    <td style="width:56%"></td>
+	                    <td align="center" style="width:22%">				
+	                        <a id="btnMyAccountRegistered" class="center"><img src="images/Settings.png" style="height:40px; width:40px"  alt ="">  <br>	<span style="font-weight:normal;">Settings</span>
+							</a>
+	                    </td>
+	                </tr>
+	            </table>
 
 				</div>
 			</div>
@@ -248,8 +231,8 @@
 			<table style="border-collapse: collapse; width: 100%">
 				<tr>
 					<td align="center" style="width: 15%" valign="top">
-						<div onClick="goBack('#pageWelcome')" class="backButton">&nbsp;</div>
-					</td>
+					<div onClick="goBack('#pageWelcome')"
+							class="backButton">&nbsp;</div></td>
 					<td align="center" style="width: 60%">Please Login
 						<div class="redLine"></div>
 					</td>
@@ -261,7 +244,8 @@
 			<p style="font-weight: normal;">Incorrect Password</p>
 			<p align="center" style="padding: 20px; font-weight: normal;">
 				Please retype your password or tap on forgot password link and your
-				password will be emailed to you<br /> <br />Let's get Zappin'!<br />
+				password will be emailed to you<br />
+				<br />Let's get Zappin'!<br />
 				<br />
 			</p>
 			<div style="width: 100%">
@@ -322,9 +306,10 @@
 				</div>
 			</div>
 			<div id="referencePanel" style="display: none;" align="center">
-	 
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
 					<tr>
 						<td>
 							<div style="width: 100%" id="btnNavReferenceHome" align="center">
@@ -375,8 +360,16 @@
 			</table>
 		</div>
 		<div data-role="content">
-			<div id="my_disLayer" data-role="disLayer"></div>
-			<br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br />
+		<div id="my_disLayer" data-role="disLayer"></div>
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
+			<br />
 			<div id="darkLayerMyAccountRegistered" class="darkClass"
 				style="display: none;"></div>
 			<div id="divRegisterUser" style="display: none">
@@ -415,10 +408,9 @@
 			<div align="center">
 				Manage Application
 				<div align="center" id="btnDropTable"
-					class="buttons orange auto-margin" style="width: 80%">CLEAR
-					ALL DATA</div>
-			</div>
-
+					class="buttons orange auto-margin" style="width: 80%">CLEAR ALL DATA</div>
+				</div>
+		
 		</div>
 
 		<div class="footer-pannel">
@@ -433,9 +425,9 @@
 			</div>
 			<div id="MyAccountRegisteredPanel" style="display: none;"
 				align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
-
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
 
 					<tr>
 						<td>
@@ -495,7 +487,7 @@
 			<div style="width: 90%; margin: auto;">
 				<table style="width: 100%" class="statusBox">
 					<tr>
-						<td><u>TestZappCH (Beta)</u> <br /> V: <span id='spnVersion'>12.1
+						<td><u>TestZappCH (Beta)</u> <br/> V: <span id='spnVersion'>12.1
 						</span></td>
 					</tr>
 					<tr>
@@ -559,9 +551,11 @@
 				</div>
 			</div>
 			<div id="ChangePasswordPanel" style="display: none;" align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
- 					<tr>
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
+
+					<tr>
 						<td>
 							<div style="width: 100%" id="btnNavChangePasswordHome"
 								align="center">
@@ -660,7 +654,10 @@
 			<div id="darkLayerMenuPaperSummary" class="darkClassMenu"
 				style="display: none;"></div>
 			<div id="papersummary" class="progresscontent"></div>
-			<br /> <br /> <br /> <br />
+			<br />
+			<br />
+			<br />
+			<br />
 			<div id="btnPaperDetails" class="buttons orange auto-margin"
 				style="width: 80%">Show Details</div>
 			<!--dailog for Help-->
@@ -674,8 +671,7 @@
 				</div>
 
 				<div class="helpText">
-					<p>This screen shows summary of the test and the SAT score. Tap
-						on Show Details to review the correct answers and the rationale.</p>
+					<p>This screen shows summary of the test and the SAT score. Tap on Show Details to review the correct answers and the rationale.</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
@@ -692,8 +688,9 @@
 				</div>
 			</div>
 			<div id="PaperSummaryPanel" style="display: none;" align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
 
 					<tr>
 						<td>
@@ -785,9 +782,10 @@
 				</div>
 			</div>
 			<div id="PaperDetailsPanel" style="display: none;" align="center">
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
 
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
 					<tr>
 						<td>
 							<div style="width: 100%" id="btnNavPaperDetailsHome"
@@ -927,19 +925,16 @@
 
 				<div class="helpText">
 					<p>
-						Your answer displays "Your answer” along with the time to answer
-						the question. The correct answer is shown in green along with the
-						rationale. Tap on the <img src="images/prv1.png" height="15px"
+						Your answer displays "Your answer” along with the time to answer the question. The correct answer is shown in green along with the rationale. Tap on the <img src="images/prv1.png" height="15px"
 							width="10px" alt=""> or <img src="images/nxt1.png"
-							height="15px" width="10px" alt=""> to review previous or
-						next question.
+							height="15px" width="10px" alt=""> to review previous or next question.
 					</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
 			<!--dialog exit-->
 			<div>
-				<table style="width=100%;">
+				<table width=100%>
 					<tr>
 						<td>&nbsp;</td>
 					</tr>
@@ -955,7 +950,8 @@
 				</div>
 			</div>
 			<div>
-				&nbsp; <br /> <br />
+				&nbsp; <br />
+				<br />
 			</div>
 
 		</div>
@@ -970,8 +966,9 @@
 				</div>
 			</div>
 			<div id="ReviewQuestionPanel" style="display: none;" align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0"
+					border="0">
 
 					<tr>
 						<td>
@@ -1019,7 +1016,7 @@
 					</td>
 					<td align="center" style="width: 60%">Feedback <span
 						id="divReportTestQuestion"></span>
-						<div class="redLine"></div>
+					<div class="redLine"></div>
 					</td>
 					<td align="center" style="width: 15%" valign="top">&nbsp;</td>
 				</tr>
@@ -1027,7 +1024,7 @@
 		</div>
 
 		<div data-role="content">
-			<div id="my_disLayer" data-role="disLayer"></div>
+		<div id="my_disLayer" data-role="disLayer"></div>
 			<div id="feedbackHeaderText" style="width: 90%; margin: auto;"
 				class='questionAnswerColor'></div>
 			<div id="testFeedback" style="width: 90%; margin: auto;">
@@ -1057,11 +1054,9 @@
 							related issue</td>
 					</tr>
 					<tr>
-						<td align='center' colspan='2'><TextArea
-								class='.scrollEffect' rows='3' col='10'
-								id='txtReportDescription'
-								placeholder='Please provide more information' maxlength='200'
-								width='100%'></textarea></td>
+						<td align='center' colspan='2'>
+							<TextArea class='.scrollEffect' rows='3' col='10' id='txtReportDescription' placeholder='Please provide more information' maxlength='200' width='100%'></textarea>
+						</td>
 					</tr>
 					<tr>
 						<td align='center' colspan='2'>
@@ -1138,12 +1133,8 @@
 
 				<div class="helpText">
 					<p>
-						Un-attempted questions are shown in yellow, answered questions in
-						orange and skipped questions in blue. Tap on <img
-							src="images/list_view.png" height="15px" width="15px"> to
-						change to line view mode which displays questions and your
-						answers. Tap on any box to attempt a question or to review the
-						answer.
+						Un-attempted questions are shown in yellow, answered questions in orange and skipped questions in blue. Tap on <img src="images/list_view.png"
+							height="15px" width="15px"> to change to line view mode which displays questions and your answers. Tap on any box to attempt a question or to review the answer.
 					</p>
 					<p>&nbsp;</p>
 				</div>
@@ -1232,20 +1223,10 @@
 				</div>
 
 				<div class="helpText">
-					<p>
-						Tap on the test name to start or resume a test. Each test consists
-						of 85 questions which have to be completed in an hour. For tests
-						in progress, the bar displays percentage of the test completed
-						along with questions and time remaining.<br />
-						<br /> The SAT score is displayed for completed tests and the
-						answers can be reviewed by tapping on the test name.<br />
-						<br /> If a test is not completed within one hour, you have the
-						option to continue practicing without tabulating the results. For
-						the un-scored tests, progress bar displays the percentage of the
-						test completed, the number of questions remaining and the time
-						taken.<br />
-						<br />
-					</p>
+					<p>Tap on the test name to start or resume a test. Each test consists of 85 questions which have to be completed in an hour. For tests in progress, the bar displays percentage of the test completed along with questions and time remaining.<br/><br/>
+The SAT score is displayed for completed tests and the answers can be reviewed by tapping on the test name.<br/><br/>
+If a test is not completed within one hour, you have the option to continue practicing without tabulating the results. For the un-scored tests, progress bar displays the percentage of the test completed, the number of questions remaining and the time taken.<br/><br/>
+</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
@@ -1263,7 +1244,8 @@
 					</td>
 				</tr>
 			</table>
-			<br /> <br />
+			<br />
+			<br />
 		</div>
 
 
@@ -1277,8 +1259,8 @@
 				</div>
 			</div>
 			<div id="myTestPanel" style="display: none;" align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
 
 					<tr>
 						<td>
@@ -1323,7 +1305,7 @@
 					</td>
 					<td align="center" style="width: 60%"><span
 						id="spnQuestionType"> </span>
-						<div class="redLine"></div></td>
+					<div class="redLine"></div></td>
 					<td align="center" style="width: 15%" valign="top">
 						<div id="selectCompass" class="compass">&nbsp;</div>
 						<div id="menuTest" class="menu">
@@ -1439,23 +1421,15 @@
 
 				<div class="helpText">
 					<p>
-						Tap on the answer to highlight the selection which can be changed
-						prior to confirmation by tapping on previous <img
+						Tap on the answer to highlight the selection which can be changed prior to confirmation by tapping on previous <img
 							src="images/prv1.png" height="15px" width="10px" alt=""> or
 						next <img src="images/nxt1.png" height="15px" width="10px" alt="">
-						question arrows. If the next or previous questions arrows are
-						tapped without making a selection, the question is skipped. <font
-							color="#000000">. In the SAT test, half a point is
-							deducted for the wrong answer so come back to skipped questions
-							if not sure of the answer. </font> For type two questions starting with
-						question number 101 all three selections must be made before
-						tapping on the confirmation arrows otherwise the question is
-						skipped.<br /> <br /> While taking the test, the periodic table
-						can be referenced however the question and the test timers do not
-						pause.<br /> <br /> The test can be paused at anytime; to resume
-						the test, tap on the test name in the My Tests screen.<br /> <br />
-						The submit option allows test to be scored prior to the allocated
-						60 minutes.
+						question arrows. If the next or previous questions arrows are tapped without making a selection, the question is skipped. <font
+							color="#000000">. In the SAT test, half a point is deducted for the wrong answer so come back to skipped questions if not sure of the answer. </font>
+						For type two questions starting with question number 101 all three selections must be made before tapping on the confirmation arrows otherwise the question is skipped.<br />
+						<br /> While taking the test, the periodic table can be referenced however the question and the test timers do not pause.<br />
+						<br /> The test can be paused at anytime; to resume the test, tap on the test name in the My Tests screen.<br />
+						<br /> The submit option allows test to be scored prior to the allocated 60 minutes.
 
 					</p>
 					<p>&nbsp;</p>
@@ -1501,7 +1475,7 @@
 
 			<!-- right next button~~~~~~~~~~~~-->
 			<div>
-				<table style ="width=100%;">
+				<table width=100%>
 					<tr>
 						<td>&nbsp;</td>
 					</tr>
@@ -1517,7 +1491,8 @@
 				</div>
 			</div>
 			<div>
-				&nbsp; <br /> <br />
+				&nbsp; <br />
+				<br />
 			</div>
 
 		</div>
@@ -1533,8 +1508,9 @@
 				</div>
 			</div>
 			<div id="panel2" style="display: none;">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
 
 					<tr>
 						<td>
@@ -1583,16 +1559,7 @@
 					</td>
 					<td align="center" style="width: 15%" valign="top">
 						<div id="quickNavigationDeck" class="compass">&nbsp;</div>
-						<div id="showcompassDeck" class="menu">
-							<table>
-								<tr id="menuFcDeckHelp">
-									<td class="helpIcon"></td>
-									<td style="width: 100px;">
-										<div class="menuItem">HELP&nbsp;</div>
-									</td>
-								</tr>
-							</table>
-						</div>
+						
 					</td>
 				</tr>
 			</table>
@@ -1612,7 +1579,8 @@
 			<table style="width: 92%">
 				<tr>
 					<td class="align-right"><a id="btnNewFlashCardDeck"
-						class="link">NEW FLASH CARD DECK</a> <br> <br></td>
+						class="link">NEW FLASH CARD DECK</a> <br>
+					<br></td>
 				</tr>
 			</table>
 		</div>
@@ -1627,14 +1595,10 @@
 
 			<div class="helpText">
 				<p>
-					Tap on the deck name to get started. The number next the deck name
-					show cards remaining and total number of cards (in parenthesis). <br />
-					<br /> New Flashcard Deck allows you to create your own personal
-					deck(s) (<img src="images/icons/icon_customflashcards.png"
-						height="15px" width="15px"> ). Once the personal deck is
-					created, simply tap on the deck name to add cards. The cards can be
-					edited or more cards added by opening the personal flashcard decks.
-					<br /> <br /> Tap <img src="images/icons/icon_flashcards.png"
+					Tap on the deck name to get started. The number next the deck name show cards remaining and total number of cards (in parenthesis). <br />
+					<br /> New Flashcard Deck allows you to create your own personal deck(s) (<img src="images/icons/icon_customflashcards.png"
+						height="15px" width="15px"> ). Once the personal deck is created, simply tap on the deck name to add cards. The cards can be edited or more cards added by opening the personal flashcard decks. <br />
+					<br /> Tap <img src="images/icons/icon_flashcards.png"
 						height="15px" width="15px"> or <img
 						src="images/icons/icon_customflashcards.png" height="15px"
 						width="15px"> to view stats for the deck.
@@ -1692,18 +1656,15 @@
 				<div align="center">
 					<input type="text" name="txtgroupName" id="txtgroupName"
 						placeholder="Group" disabled="disabled">
-					<div data-role="fieldcontain"
-						style="padding-top: 2px; padding-bottom: 2px">
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 						<input type="text" name="txtquestion" id="txtquestion"
 							placeholder="Question" maxlength="25">
 					</div>
-					<div data-role="fieldcontain"
-						style="padding-top: 2px; padding-bottom: 2px">
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 						<input type="text" name="txtcue" id="txtcue" placeholder="Cue"
 							maxlength="25">
 					</div>
-					<div data-role="fieldcontain"
-						style="padding-top: 2px; padding-bottom: 2px">
+					<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 						<input type="text" name="txtanswer" id="txtanswer"
 							placeholder="Ans" maxlength="100">
 					</div>
@@ -1909,21 +1870,18 @@
 					</table>
 
 					<div align="center">
-
+					
 						<input type="text" name="txtgroupNameN" id="txtgroupNameN"
 							disabled="disabled">
-						<div data-role="fieldcontain"
-							style="padding-top: 2px; padding-bottom: 2px">
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 							<input type="text" name="txtquestionN" id="txtquestionN"
 								placeholder="Question" maxlength="25">
 						</div>
-						<div data-role="fieldcontain"
-							style="padding-top: 2px; padding-bottom: 2px">
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 							<input type="text" name="txtcueN" id="txtcueN" placeholder="Cue"
 								maxlength="25">
 						</div>
-						<div data-role="fieldcontain"
-							style="padding-top: 2px; padding-bottom: 2px">
+						<div data-role="fieldcontain" style="padding-top:2px; padding-bottom:2px">
 							<input type="text" name="txtanswerN" id="txtanswerN"
 								placeholder="Ans" maxlength="100">
 						</div>
@@ -2042,13 +2000,8 @@
 			</div>
 
 			<div class="helpText">
-				<p align="left">
-					The periodic table is your best friend and resource for acing the
-					SAT test. Tap on any element to open the 3x3 elements around view –
-					tap on the center element to view properties.<br />
-					<br /> Use the search feature to find element by name, atomic
-					number, group or period and view details.
-				</p>
+				<p align="left">The periodic table is your best friend and resource for acing the SAT test. Tap on any element to open the 3x3 elements around view – tap on the center element to view properties.<br/><br/>
+				Use the search feature to find element by name, atomic number, group or period and view details.</p>
 				<p>&nbsp;</p>
 			</div>
 		</div>
@@ -2190,10 +2143,7 @@
 			</div>
 
 			<div class="helpText">
-				<p align="left">This 3x3 view can be panned by tapping on the
-					neighboring element. Below the 3x3 view is a thumbnail view of the
-					period table, tap anywhere to enlarge. Tap on the center element to
-					view properties.</p>
+				<p align="left">This 3x3 view can be panned by tapping on the neighboring element. Below the 3x3 view is a thumbnail view of the period table, tap anywhere to enlarge. Tap on the center element to view properties.</p>
 				<p>&nbsp;</p>
 			</div>
 		</div>
@@ -2248,9 +2198,9 @@
 			</div>
 
 			<div class="helpText">
-				<p align="left">Type full or part of the element name; symbol;
-					atomic weight or group name to search. Tap on any element in the
-					filtered list to view details.</p>
+				<p align="left">Type full or part of the element name; symbol; atomic weight
+					or group name to search. Tap on any element in the filtered list to
+					view details.</p>
 				<p>&nbsp;</p>
 			</div>
 		</div>
@@ -2297,16 +2247,14 @@
 			<div id="dialogPTHelpLearnPage" class="help_web_dialog">
 				<div class="align-right">
 					<a id="btnClosePTHelpLearnPage"><img
-						src="images/close_icon.png" class="btnIcon" /></a>
+						src="images/close_icon.png" class="btnIcon"/></a>
 				</div>
 				<div class="helpTitle align-left">
 					PT-HELP–Element details<br>
 				</div>
 
 				<div class="helpText">
-					<p>Tap anywhere to view neighboring elements. Below the
-						detailed view is the thumbnail view of the periodic table; tap on
-						any element to view properties.</p>
+					<p>Tap anywhere to view neighboring elements. Below the detailed view is the thumbnail view of the periodic table; tap on any element to view properties.</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
@@ -2382,8 +2330,8 @@
 				</div>
 			</div>
 			<div id="qotdPanel" style="display: none;" align="center">
-				<table style="width: 100%; height: 100% ;border-collapse: collapse;  padding: 0;"
-					class=" vertical-align-middle"> <!--  cellspacing="0" cellpadding="0">  -->
+				<table style="width: 100%; height: 100%"
+					class=" vertical-align-middle" cellspacing="0" cellpadding="0">
 					<tr>
 						<td>
 							<div style="width: 100%" id="btnNavQotdHome" align="center">
@@ -2481,10 +2429,10 @@
 				<p>
 					Chemistry subject tests feature three types of questions. Tap on
 					the answer and if the selection is correct, a pop-up window will
-					appear with rationale.<br /> <br /> If the selection is
-					incorrect, a pop-up window will provide the option to display the
-					correct answer. By closing the pop-up, another answer can be
-					selected.
+					appear with rationale.<br />
+					<br /> If the selection is incorrect, a pop-up window will provide
+					the option to display the correct answer. By closing the pop-up,
+					another answer can be selected.
 				</p>
 				<p>&nbsp;</p>
 			</div>
@@ -2590,10 +2538,7 @@
 				</div>
 
 				<div class="helpText">
-					<p>This screen shows summary of all the scored tests. By topics
-						review allows results to be reviewed by topic. The number in
-						parenthesis shows correct answers out of all the questions for the
-						topic.</p>
+					<p>This screen shows summary of all the scored tests. By topics review allows results to be reviewed by topic. The number in parenthesis shows correct answers out of all the questions for the topic.</p>
 					<p>&nbsp;</p>
 				</div>
 			</div>
@@ -2767,6 +2712,39 @@
 					</td>
 				</tr>
 			</table>
+		</div>
+
+		<div data-role="content">
+			<div id="my_disLayer" data-role="disLayer"></div>
+			<div id="darkLayerBackupList" class="darkClassMenu"
+				style="display: none;"></div>
+			<div id="backupList" style="width: 90%; margin: auto;"></div>
+
+			<!--dailog for Help-->
+			<div id="dialogBackupListHelp" class="help_web_dialog">
+				<div class="align-right">
+					<a id="btnCloseBackupListHelp"><img src="images/close_icon.png"
+						class="btnIcon"></a>
+				</div>
+				<div class="helpTitle align-left">
+					BACKUP LIST-HELP<br>
+				</div>
+
+				<div class="helpText">
+					<p>This screeen shows a list of backups taken from different devices. The list is in descending order of dates as the backup were taken.</p>
+					<p>&nbsp;</p>
+				</div>
+			</div>
+			<!--dialog exit-->
+		</div>
+
+	</div>
+	<!-- end-->
+
+
+</body>
+</html>
+
 		</div>
 
 		<div data-role="content">

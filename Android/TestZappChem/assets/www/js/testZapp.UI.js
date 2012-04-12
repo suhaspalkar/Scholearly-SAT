@@ -26,7 +26,7 @@ $('#pageSplash').live('pageinit', function () {
     .css('background-repeat', 'no-repeat')
     .css('background-size', 'cover');
     
-    //initDatabase();    
+   // initDatabase();    
 });
 
 
@@ -407,11 +407,11 @@ $('#btnCloseInfo').live('tap', function(event, ui) {
 
 $('#darkLayerHome').live('tap', function(event, ui) {
     event.preventDefault();
-	ShowDialogHelp(false,"dialogInfo","darkLayerHome");
+	ShowDialogHelp(false,"dialogInfo","darkLayerHome");s
 });
 
 var app_version = "1";
-var app_release_no = "1.0.17";
+var app_release_no = "1.0.18";
 
 /* Info block End */
 $("#pageAbout").live("pagecreate", function (event, ui) {

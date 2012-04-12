@@ -38,10 +38,12 @@ body{
 	padding-top:15px;
 	background: #ddd8d7;
     background-color:#ddd8d7;	
-	
-	/*-webkit-backface-visibility:hidden;
+	//-webkit-backface-visibility:hidden;
 	overflow:hidden;
+	
+	/*
 	margin-bottom:1em;
+	overflow:auto;
 	min-height:340px;
 	*/
 }	
