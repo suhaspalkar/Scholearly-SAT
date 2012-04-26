@@ -411,7 +411,7 @@ $('#darkLayerHome').live('tap', function(event, ui) {
 });
 
 var app_version = "1";
-var app_release_no = "1.0.18";
+var app_release_no = "1.0.19";
 
 /* Info block End */
 $("#pageAbout").live("pagecreate", function (event, ui) {
