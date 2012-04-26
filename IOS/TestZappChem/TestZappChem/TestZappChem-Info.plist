@@ -14,9 +14,9 @@
 	<array>
 		<string>icon.png</string>
 		<string>icon@2x.png</string>
-		<string>icon-72.png</string>
-		<string>icon-57.png</string>
-		<string>icon-114.png</string>
+		<string>Scholearly_TestZappSATChemistry_72.png</string>
+		<string>Scholearly_TestZappSATChemistry_57.png</string>
+		<string>Scholearly_TestZappSATChemistry_114.png</string>
 	</array>
 	<key>CFBundleIdentifier</key>
 	<string>com.scholearly.testzapp.sat.chemistry</string>

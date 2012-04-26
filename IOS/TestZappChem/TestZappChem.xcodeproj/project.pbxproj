@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B70D5D001535A6A100BFD39F /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = B70D5CFF1535A6A100BFD39F /* iTunesArtwork */; };
 		B724FAC314FE2F31009F6009 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B724FAC214FE2F31009F6009 /* Foundation.framework */; };
 		B724FAC514FE2F31009F6009 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B724FAC414FE2F31009F6009 /* UIKit.framework */; };
 		B724FAC714FE2F31009F6009 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B724FAC614FE2F31009F6009 /* CoreGraphics.framework */; };
@@ -26,7 +25,6 @@
 		B724FAE614FE2F32009F6009 /* PhoneGap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B724FAE514FE2F32009F6009 /* PhoneGap.framework */; };
 		B724FAEB14FE2F32009F6009 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B724FAE914FE2F32009F6009 /* Localizable.strings */; };
 		B724FAEF14FE2F32009F6009 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = B724FAED14FE2F32009F6009 /* Localizable.strings */; };
-		B724FAF614FE2F32009F6009 /* icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = B724FAF514FE2F32009F6009 /* icon-72.png */; };
 		B724FAFD14FE2F32009F6009 /* Capture.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B724FAFC14FE2F32009F6009 /* Capture.bundle */; };
 		B724FAFF14FE2F32009F6009 /* PhoneGap.plist in Resources */ = {isa = PBXBuildFile; fileRef = B724FAFE14FE2F32009F6009 /* PhoneGap.plist */; };
 		B724FB0314FE2F32009F6009 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B724FB0214FE2F32009F6009 /* AppDelegate.m */; };
@@ -34,15 +32,16 @@
 		B724FB0814FE2F32009F6009 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B724FB0714FE2F32009F6009 /* MainViewController.xib */; };
 		B724FB1414FE447C009F6009 /* Default-Landscape~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B724FB1014FE447C009F6009 /* Default-Landscape~ipad.png */; };
 		B724FB1514FE447C009F6009 /* Default-Portrait~ipad.png in Resources */ = {isa = PBXBuildFile; fileRef = B724FB1114FE447C009F6009 /* Default-Portrait~ipad.png */; };
-		B724FB1B14FE44A1009F6009 /* icon-57.png in Resources */ = {isa = PBXBuildFile; fileRef = B724FB1814FE44A1009F6009 /* icon-57.png */; };
-		B724FB1D14FE44A1009F6009 /* icon-114.png in Resources */ = {isa = PBXBuildFile; fileRef = B724FB1A14FE44A1009F6009 /* icon-114.png */; };
 		B737C4D514FE47CD00288502 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = B737C4D414FE47CD00288502 /* Default.png */; };
 		B737C4D914FE483E00288502 /* Default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = B737C4D814FE483E00288502 /* Default@2x.png */; };
+		B77807081549462000B44E02 /* Scholearly_TestZappSATChemistry_114.png in Resources */ = {isa = PBXBuildFile; fileRef = B77807051549462000B44E02 /* Scholearly_TestZappSATChemistry_114.png */; };
+		B77807091549462000B44E02 /* Scholearly_TestZappSATChemistry_57.png in Resources */ = {isa = PBXBuildFile; fileRef = B77807061549462000B44E02 /* Scholearly_TestZappSATChemistry_57.png */; };
+		B778070A1549462000B44E02 /* Scholearly_TestZappSATChemistry_72.png in Resources */ = {isa = PBXBuildFile; fileRef = B77807071549462000B44E02 /* Scholearly_TestZappSATChemistry_72.png */; };
+		B778070E154947B400B44E02 /* iTunesArtwork in Resources */ = {isa = PBXBuildFile; fileRef = B778070D154947B400B44E02 /* iTunesArtwork */; };
 		B7F27FB61501028E004D1090 /* www in Resources */ = {isa = PBXBuildFile; fileRef = B7F27FB51501028E004D1090 /* www */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		B70D5CFF1535A6A100BFD39F /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/icons/iTunesArtwork; sourceTree = "<group>"; };
 		B724FABE14FE2F31009F6009 /* TestZappChem.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestZappChem.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B724FAC214FE2F31009F6009 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		B724FAC414FE2F31009F6009 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -64,7 +63,6 @@
 		B724FAE514FE2F32009F6009 /* PhoneGap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PhoneGap.framework; path = /Users/Shared/PhoneGap/Frameworks/PhoneGap.framework; sourceTree = "<absolute>"; };
 		B724FAEA14FE2F32009F6009 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = Resources/en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		B724FAEE14FE2F32009F6009 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = Resources/es.lproj/Localizable.strings; sourceTree = "<group>"; };
-		B724FAF514FE2F32009F6009 /* icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-72.png"; path = "Resources/icons/icon-72.png"; sourceTree = "<group>"; };
 		B724FAFC14FE2F32009F6009 /* Capture.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = Capture.bundle; path = Resources/Capture.bundle; sourceTree = "<group>"; };
 		B724FAFE14FE2F32009F6009 /* PhoneGap.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = PhoneGap.plist; sourceTree = "<group>"; };
 		B724FB0114FE2F32009F6009 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = Classes/AppDelegate.h; sourceTree = "<group>"; };
@@ -75,10 +73,12 @@
 		B724FB0A14FE2F32009F6009 /* README */ = {isa = PBXFileReference; lastKnownFileType = text; name = README; path = Plugins/README; sourceTree = "<group>"; };
 		B724FB1014FE447C009F6009 /* Default-Landscape~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Landscape~ipad.png"; path = "Resources/splash/Default-Landscape~ipad.png"; sourceTree = "<group>"; };
 		B724FB1114FE447C009F6009 /* Default-Portrait~ipad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default-Portrait~ipad.png"; path = "Resources/splash/Default-Portrait~ipad.png"; sourceTree = "<group>"; };
-		B724FB1814FE44A1009F6009 /* icon-57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-57.png"; path = "Resources/icons/icon-57.png"; sourceTree = "<group>"; };
-		B724FB1A14FE44A1009F6009 /* icon-114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icon-114.png"; path = "Resources/icons/icon-114.png"; sourceTree = "<group>"; };
 		B737C4D414FE47CD00288502 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = Resources/splash/Default.png; sourceTree = "<group>"; };
 		B737C4D814FE483E00288502 /* Default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Default@2x.png"; path = "Resources/splash/Default@2x.png"; sourceTree = "<group>"; };
+		B77807051549462000B44E02 /* Scholearly_TestZappSATChemistry_114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Scholearly_TestZappSATChemistry_114.png; path = Resources/icons/Scholearly_TestZappSATChemistry_114.png; sourceTree = "<group>"; };
+		B77807061549462000B44E02 /* Scholearly_TestZappSATChemistry_57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Scholearly_TestZappSATChemistry_57.png; path = Resources/icons/Scholearly_TestZappSATChemistry_57.png; sourceTree = "<group>"; };
+		B77807071549462000B44E02 /* Scholearly_TestZappSATChemistry_72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Scholearly_TestZappSATChemistry_72.png; path = Resources/icons/Scholearly_TestZappSATChemistry_72.png; sourceTree = "<group>"; };
+		B778070D154947B400B44E02 /* iTunesArtwork */ = {isa = PBXFileReference; lastKnownFileType = file; name = iTunesArtwork; path = Resources/icons/iTunesArtwork; sourceTree = "<group>"; };
 		B7F27FB51501028E004D1090 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = Resources/www; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +134,7 @@
 		B724FAC114FE2F31009F6009 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B724FAE514FE2F32009F6009 /* PhoneGap.framework */,
 				B724FAC214FE2F31009F6009 /* Foundation.framework */,
 				B724FAC414FE2F31009F6009 /* UIKit.framework */,
 				B724FAC614FE2F31009F6009 /* CoreGraphics.framework */,
@@ -154,7 +155,6 @@
 		B724FADC14FE2F31009F6009 /* TestZappChem */ = {
 			isa = PBXGroup;
 			children = (
-				B724FAE514FE2F32009F6009 /* PhoneGap.framework */,
 				B724FAE714FE2F32009F6009 /* Resources */,
 				B724FB0014FE2F32009F6009 /* Classes */,
 				B724FB0914FE2F32009F6009 /* Plugins */,
@@ -208,10 +208,10 @@
 		B724FAF014FE2F32009F6009 /* icons */ = {
 			isa = PBXGroup;
 			children = (
-				B70D5CFF1535A6A100BFD39F /* iTunesArtwork */,
-				B724FB1814FE44A1009F6009 /* icon-57.png */,
-				B724FB1A14FE44A1009F6009 /* icon-114.png */,
-				B724FAF514FE2F32009F6009 /* icon-72.png */,
+				B77807051549462000B44E02 /* Scholearly_TestZappSATChemistry_114.png */,
+				B77807061549462000B44E02 /* Scholearly_TestZappSATChemistry_57.png */,
+				B77807071549462000B44E02 /* Scholearly_TestZappSATChemistry_72.png */,
+				B778070D154947B400B44E02 /* iTunesArtwork */,
 			);
 			name = icons;
 			sourceTree = "<group>";
@@ -303,18 +303,18 @@
 				B724FAE114FE2F31009F6009 /* InfoPlist.strings in Resources */,
 				B724FAEB14FE2F32009F6009 /* Localizable.strings in Resources */,
 				B724FAEF14FE2F32009F6009 /* Localizable.strings in Resources */,
-				B724FAF614FE2F32009F6009 /* icon-72.png in Resources */,
 				B724FAFD14FE2F32009F6009 /* Capture.bundle in Resources */,
 				B724FAFF14FE2F32009F6009 /* PhoneGap.plist in Resources */,
 				B724FB0814FE2F32009F6009 /* MainViewController.xib in Resources */,
 				B724FB1414FE447C009F6009 /* Default-Landscape~ipad.png in Resources */,
 				B724FB1514FE447C009F6009 /* Default-Portrait~ipad.png in Resources */,
-				B724FB1B14FE44A1009F6009 /* icon-57.png in Resources */,
-				B724FB1D14FE44A1009F6009 /* icon-114.png in Resources */,
 				B737C4D514FE47CD00288502 /* Default.png in Resources */,
 				B737C4D914FE483E00288502 /* Default@2x.png in Resources */,
 				B7F27FB61501028E004D1090 /* www in Resources */,
-				B70D5D001535A6A100BFD39F /* iTunesArtwork in Resources */,
+				B77807081549462000B44E02 /* Scholearly_TestZappSATChemistry_114.png in Resources */,
+				B77807091549462000B44E02 /* Scholearly_TestZappSATChemistry_57.png in Resources */,
+				B778070A1549462000B44E02 /* Scholearly_TestZappSATChemistry_72.png in Resources */,
+				B778070E154947B400B44E02 /* iTunesArtwork in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -700,6 +700,16 @@ $("#quickNavForBackupList").live('tap', function(event, ui) {
     ShowDialogHelpBackupList(true);
 });
 
+$("#btnCloseBackupListHelp").live('tap', function(event, ui) {
+    event.preventDefault();
+    HideDialogHelpBackupList();
+});
+
+$("#darkLayerBackupList").live('tap', function(event, ui) {
+    event.preventDefault();
+    HideDialogHelpBackupList();
+});
+
 function ShowDialogHelpBackupList(modal) { // to show toast/msgbox 
     $("#darkLayerBackupList").show();
     $("#dialogBackupListHelp").fadeIn(300);
