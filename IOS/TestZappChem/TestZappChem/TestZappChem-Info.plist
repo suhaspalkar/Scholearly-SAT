@@ -11,11 +11,9 @@
 	<key>CFBundleExecutable</key>
 	<string>${EXECUTABLE_NAME}</string>
 	<key>CFBundleIconFile</key>
-	<string>icon.png</string>
+	<string>Scholearly_TestZappSATChemistry_57.png</string>
 	<key>CFBundleIconFiles</key>
 	<array>
-		<string>icon.png</string>
-		<string>icon@2x.png</string>
 		<string>Scholearly_TestZappSATChemistry_72.png</string>
 		<string>Scholearly_TestZappSATChemistry_57.png</string>
 		<string>Scholearly_TestZappSATChemistry_114.png</string>
@@ -38,8 +36,6 @@
 	<string>1.0.19</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSMainNibFile</key>
-	<string></string>
 	<key>NSMainNibFile~ipad</key>
 	<string></string>
 	<key>UISupportedInterfaceOrientations</key>

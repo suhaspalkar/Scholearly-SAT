@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>TestZappChem copy.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>1</integer>
+		</dict>
 		<key>TestZappChem.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -13,6 +18,11 @@
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
 		<key>B724FABD14FE2F31009F6009</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B7E96377154A5D32003BB40B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
