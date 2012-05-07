@@ -407,7 +407,7 @@ $('#btnCloseInfo').live('tap', function(event, ui) {
 
 $('#darkLayerHome').live('tap', function(event, ui) {
     event.preventDefault();
-	ShowDialogHelp(false,"dialogInfo","darkLayerHome");s
+	ShowDialogHelp(false,"dialogInfo","darkLayerHome");
 });
 
 var app_version = "1";
