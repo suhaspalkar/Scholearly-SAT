@@ -341,7 +341,7 @@ $('#pageFeedback').live('pagebeforeshow', function (event, ui) {
 	}
 	else
 	{
-		feedbackHeaderText = "Thank you for trying this Free Beta App. Please provide as much information as possible to improve this App.";
+		feedbackHeaderText = "Thank you for trying this Free App. Please provide as much information as possible to improve this App.";
 		$('#QuestionRow').hide();
 		$('#AnswerRow').hide();
 		$('#rationaleRow').hide();

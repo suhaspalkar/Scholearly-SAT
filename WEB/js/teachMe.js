@@ -982,8 +982,7 @@ function editFCW() {
     db.transaction(function(txt) {
         txt.executeSql("UPDATE tbFlashCard SET deckId = ? , question = ? , cue = ? ,answer = ? WHERE  fcId = ? ", [deckId, que, cue, ans, fcId]);
 
-        //alert("Data Update Successfully.");
-        showAppToast('showNoticeToast', 'Data Update Successfully', 2000);
+        showAppToast('showNoticeToast', 'Data Updated Successfully', 2000);
         setDeck(deckId);
         refreshFieldsN();
         HideDialogAddCard();

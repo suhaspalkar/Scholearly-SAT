@@ -685,7 +685,9 @@ $("#btnClosePTHelpLearnPage").live('tap', function(event, ui) {
 
 function ShowDialogHelpPTSearchPage(modal) { // to show toast/msgbox 
     $("#darkLayerMenuPTSearchPage").show();
-    $("#dialogPTHelpSearchPage").fadeIn(300);
+    $("#dialogPTHelpSearchPage").fadeIn(300);	
+	//$("#dialogPTHelpSearchPage").css("top","300");
+	//$("#dialogPTHelpSearchPage").verticalcenter();
 
     if (modal) {
         $("#darkLayerMenuPTSearchPage").unbind("click");

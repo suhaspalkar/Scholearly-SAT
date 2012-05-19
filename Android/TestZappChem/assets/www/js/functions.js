@@ -1139,7 +1139,7 @@ function changepassword() {
                 if (document.getElementById("userNewPassword1").value == document.getElementById("userNewConfirmPassword1").value) {
                     changePasswordOnServer(cnt.userEmail, document.getElementById("usercurrentPassword").value, document.getElementById("userNewPassword1").value);
                 } else {
-                    $().toastmessage('showNoticeToast', 'New password and confirm new password mismaatched.');
+                    $().toastmessage('showNoticeToast', 'Passwords mismatched');
                 }
             } else {
                 $().toastmessage('showNoticeToast', 'Wrong Current Password.');
